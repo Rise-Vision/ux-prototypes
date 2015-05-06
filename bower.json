@@ -1,0 +1,24 @@
+{
+  "name": "ux-mockups",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "www"
+  ],
+  "dependencies": {
+    "rv-common-style": "git://github.com/Rise-Vision/common-style",
+    "angular-bootstrap": "~0.11.0"
+  },
+  "resolutions": {
+    "angular": "1.2.18",
+    "angular-mocks": "1.2.18",
+    "jquery": "1.11.0",
+    "angular-bootstrap": "~0.11.0"
+  }
+}
