@@ -1,9 +1,7 @@
-// Alerts
 @mixin alert-variant($background, $border, $text-color, $link-text-color: darken($text-color, 10%) ) {
   background-color: $background;
   border-color: $border;
   color: $text-color;
-
   hr {
     border-top-color: darken($border, 5%);
   }
@@ -12,8 +10,6 @@
   }
 }
 
-
-// Horizontal dividers
 @mixin nav-divider($color: #e5e5e5, $margin-top: (($line-height-computed / 2) - 1)) {
   height: 1px;
   margin: $margin-top 0;
@@ -21,21 +17,19 @@
   background-color: $color;
 }
 
-
-// Button variants
 @mixin button-variant($color, $background, $border, $border-active: darken($border, 12%), $bg-active: darken($background, 8%), $border-disabled: $border) {
   color: $color;
   background-color: $background;
   border-color: $border;
-
   &:hover,
   &:focus,
   &:active,
   &.active,
   .open > &.dropdown-toggle {
     color: $color;
-    background-color: $bg-active;
+    background-color: darken($background, 5%);
     border-color: darken($border, 12%);
+    outline: 0;
   }
   &:active,
   &.active,
@@ -61,8 +55,6 @@
   }
 }
 
-
-// Labels
 @mixin label-variant($color, $bg-color-hover: darken($color, 10%)) {
   background-color: $color;
 

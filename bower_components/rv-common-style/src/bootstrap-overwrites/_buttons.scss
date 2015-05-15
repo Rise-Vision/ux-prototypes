@@ -1,13 +1,21 @@
-$btn-default-color: #444;
-
 .btn {
   outline:0;
   border-radius: 2px;
-
   .badge {
     background: $btn-default-bg;
     color: $btn-default-color;
   }
+}
+
+.btn-lg {
+	font-size: 16px;
+}
+
+.btn-hg,
+.btn-group-hg > .btn {
+  padding: 14px 24px;
+  font-size: 18px;
+  line-height: 1.33;
 }
 
 .btn-default {
@@ -18,6 +26,6 @@ $btn-default-color: #444;
   @include button-variant($white, $rise-green, $rise-green, $btn-default-border-disabled, darken($rise-green, 10%), lighten($rise-green, 5%));
 }
 
-.btn-lg {
-	font-size: 16px;
+.btn-store {
+  @include button-variant($white, $rise-blue, $rise-blue, $btn-default-border-disabled, darken($rise-blue, 10%), lighten($rise-blue, 5%));
 }

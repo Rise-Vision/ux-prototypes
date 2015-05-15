@@ -12,13 +12,14 @@
     "www"
   ],
   "dependencies": {
-    "rv-common-style": "git://github.com/Rise-Vision/common-style",
+    "rv-common-style": "git://github.com/Rise-Vision/common-style#master",
     "angular-bootstrap": "~0.11.0"
   },
   "resolutions": {
     "angular": "1.2.18",
     "angular-mocks": "1.2.18",
     "jquery": "1.11.0",
-    "angular-bootstrap": "~0.11.0"
+    "angular-bootstrap": "~0.11.0",
+    "rv-common-style": "master"
   }
 }

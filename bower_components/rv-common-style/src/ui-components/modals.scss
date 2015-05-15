@@ -36,6 +36,29 @@
 .modal-backdrop.in { z-index: 9001; }
 
 .modal-content {
+  padding: 0;
+  background: #fcfcfc;
+}
+
+.modal-header {
+  margin-bottom: 0;
+  background: $lighter-gray;
+  border-radius: 4px 4px 0 0;
+  .close {
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 0px;
+  }
+}
+
+.modal-title {
+  font-weight: 500;
+  font-size: 16px;
+  padding:15px;
+}
+
+.modal-title + .header-nav {
+  margin-top: -5px;
 }
 
 .modal-header,
@@ -48,12 +71,21 @@
       /* Display & Box Modes */
       margin-top: -2px;
       /* Visual */
-      font-size: 18px;
     }
   }
 }
 
+
+.modal-body {
+  padding:15px;
+}
+
+.modal-header, .modal-footer {
+  padding: 0;
+}
+
 .modal-footer {
+  padding: 0 15px 15px;
   margin-top: 0;
 
   .btn-fixed-width {
@@ -91,13 +123,11 @@
   .modal-dialog { margin: 5px; }
 
   .modal-header {
-    .modal-title { font-size: 20px; }
-    .close { padding: 5px;}
+    .modal-title {  }
+    .close { padding: 15px;}
   }
 
   .modal-footer {
-
-
     .btn-fixed-width {
       width: 96px;
     }

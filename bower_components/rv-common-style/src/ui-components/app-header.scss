@@ -1,80 +1,77 @@
 .app-header {
   @include make-row;
-  margin-bottom: 10px;
-  .title-block,.app-title {
-    @include make-sm-column(4);
+  position: relative;
+  padding-bottom: 10px;
+  .title-block {
+    @include make-sm-column(6);
     h1 {
-      font-weight: 400;
-      line-height: 38px;
-      margin: 0 5px 0 0;
       display: inline-block;
+      font-weight: 400;
+      line-height: 40px;
+      margin: 0 5px 0 0;
     }
     .store-status-2 {
       display: inline-block;
-      vertical-align: top;
-      margin-top: 10px;
-      @media (max-width: 768px) {
-        display: block;
-      }
-    }    
-    .store-status {
-      display: inline-block;
-      vertical-align: top;
-      h3 {
-        margin:0;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 43px;
-        a {
-          font-weight: bold;
-        }
-      }
-      @media (max-width: 768px) {
-        display: block;
-        h3 {
-          line-height: normal;
-        }
-      }
+      vertical-align: text-bottom;
     }
   }
-  .app-title {
-    border-bottom: 1px solid #D6D6D6;
-  }
-
   .global-actions {
+    @include make-sm-column(6);
     text-align: right;
-    .btn {
-      float: right;
-      margin-left: 10px;
+    .btn-group {
+      .dropdown-menu {
+        left: auto;
+        right: 0;
+        label {
+          margin-left: 8px;
+          display: block;
+          padding: 10px;
+          font-weight: 400;
+          cursor: pointer;
+          &:hover {
+            color: $rise-blue;
+          }
+        }
+      }
     }
-    @include make-sm-column(8);
     @media (max-width: 768px) {
       margin-top: 10px;
-      float:none;
       .btn {
-        float: none;
         width: 100%;
         margin: 0 0 5px;
+        padding: 8px 0;
+      }
+      .btn-group {
+        width: 100%;
+        .dropdown-menu {
+          width: 100%;
+        }
       }
     }
-  }
-
-  .form-group {
-    @include make-sm-column(12);
-    margin-top: 20px;
-    margin-bottom: 0;
   }
 }
 
-.active-folder {
-  .fa:before {
-    color:$rise-green;
-  }
-  span {
-    margin-left: 5px;
-    vertical-align: top;
+.selector-header {
+  padding: 0 15px 15px;
+  p {
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
     display: inline-block;
-    margin-top: 5px;
-    color: $gray;
+    vertical-align: middle;
+    &:first-child {display:block;}
+  }
+  @media (max-width: 768px) {
+    .icon-nav {
+      .btn {margin-left: -4px;}
+    }
+    .store-status-2 {
+      vertical-align: top;
+      display: block;
+      margin: 10px 0 0 0;
+      .btn {float: right;}
+    }
   }
 }

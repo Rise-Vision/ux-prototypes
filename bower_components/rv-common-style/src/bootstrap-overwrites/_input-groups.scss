@@ -1,4 +1,3 @@
-
 .custom-addon,.checkbox-addon,.storage-group {
   .input-group-addon {
     background: none;
@@ -30,11 +29,13 @@
 }
 
 .control-label {
-	line-height: 22px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #444;
 }
 
 .control-label-secondary {
-	font-weight: normal;
+  font-weight: 400;
 }
 
 .input-group > .form-control,
