@@ -31,3 +31,11 @@ function loadSubscribed() {
     $('.subStat.active').removeClass('active');
 	$('#subscriberStatus').show();
 }
+
+function pageloadSignedIn() {
+  $(location).attr('href', '/signedIn.html');
+  }
+
+  function pageloadSignedOut() {
+    $(location).attr('href', '/signedOut.html');
+  }

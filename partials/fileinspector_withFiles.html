@@ -1,11 +1,25 @@
 <div class="container" id="fileinspector_withFiles" style="display:none">
     <div>
-        <div class="subStat trial" style="display:block">
-            30 days remaining in your Trial
-            <button type="button" class="btn btn-white">
+         <div class="subStat trial active">
+            30 days remaining in your trial.
+            <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
                 Subscribe now!
             </button>
         </div>
+         <div class="subStat expired">
+            Your trial has expired.
+            <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                Subscribe now!
+            </button>
+        </div>
+
+        <div class="subStat suspended">
+            Your account has been suspended.
+            <button type="button" class="btn btn-white" onclick="loadSubscribed()">
+                View Invoices
+            </button>
+        </div>
+
         <div class="input-group" style="margin-top:24px;">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
             <input type="text" ng-model="$parent.query" class="form-control ng-pristine ng-untouched ng-valid" placeholder="Search for files or folders">
