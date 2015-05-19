@@ -24,9 +24,17 @@
 
   <body>
 
+
+
 <div ng-controller="MockupsAppController">
+
+
     <!-- Main View -->
-    <div ng-include="'partials/common-header.html'" scope="" onload=""></div>
+    <div ng-include="'partials/common-header.html'" scope="" onload="" ng-init="navs = [{
+      url:'ux.html',
+      label:'Ux Prototypes'
+      }]">
+    </div>
 
     <div class="container">
       <div class="app-header add-top add-bottom">
