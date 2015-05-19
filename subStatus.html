@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html ng-app="MockupsApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>UX Prototype - Storage Trial (Signed In)</title>
+    <!-- app css -->
+    <link href="bower_components/rv-common-style/dist/css/rise.min.css" rel="stylesheet" type="text/css">
+     <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <!-- Main View -->
+    <div ng-include="'partials/common-header.html'" scope="" onload=""></div>
+    <div class="container">
+        <div class="app-header add-bottom">
+            <div class="title-block">
+                <h1>Storage
+                <span id="subscriberStatus"> SUBSCRIBED </span>
+                </h1>
+                <!-- <h2>My Project</h2> -->
+            </div>
+            <div class="global-actions" style="">
+            <div class="uploadCTA" style="display:none;"><div class="tooltip-arrow"></div>Add a file or folder</div>
+               
+                <button class="btn btn-lg btn-default">Add Folder<i class="fa fa-plus icon-right"></i></button>
+                 <button class="btn btn-lg ng-click-active">Upload File <i class="fa fa-cloud-upload icon-right"></i></button>
+            </div>
+        </div>
+    </div>
+    
+   
+
+   <div class="container" id="fileinspector_withFiles" style="">
+    <div>
+
+        <div class="subStat trial active">
+            30 days remaining in your Trial.
+            <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                Subscribe now!
+            </button>
+        </div>
+
+        <div class="subStat trial">
+            7 days remaining in your Trial.
+            <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                Subscribe now!
+            </button>
+        </div>
+
+         <div class="subStat expired">
+            Your Trial has expired.
+            <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                Subscribe now!
+            </button>
+        </div>
+
+        <div class="subStat suspended">
+            Your account has been suspended.
+            <button type="button" class="btn btn-white" onclick="loadSubscribed()">
+                View Invoices
+            </button>
+        </div>
+
+
+
+        <div class="input-group" style="margin-top:24px;">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" ng-model="$parent.query" class="form-control ng-pristine ng-untouched ng-valid" placeholder="Search for files or folders">
+        </div>
+
+
+        <div class="toolbar" style="text-align: right;
+  margin-top: 12px;">
+            <div class="icon-nav">
+                <span ng-show="filesDetails.checkedItemsCount > 0" class="ng-hide">
+            <span translate="storage-client.selected-items" translate-values="{ count: filesDetails.checkedItemsCount }" class="ng-scope">0 Selected</span>
+                </span>
+                <button type="button" class="btn btn-link" title="Download" ng-click="downloadButtonClick()" ng-disabled="isDisabledDownloadButton()" disabled="disabled">
+                    <i class="fa fa-cloud-download fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledDownloadButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link" title="Copy Url" ng-click="copyUrlButtonClick('lg')" ng-hide="isTrashFolder()" ng-disabled="isDisabledCopyUrlButton()" disabled="disabled">
+                    <i class="fa fa-link fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledCopyUrlButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link" title="Move To Trash" ng-click="trashButtonClick()" ng-show="!isTrashFolder()" ng-disabled="isDisabledTrashButton()" disabled="disabled">
+                    <i class="fa fa-trash-o fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledTrashButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link ng-hide" title="Restore From Trash" ng-click="restoreButtonClick()" ng-show="isTrashFolder()" ng-disabled="isDisabledRestoreButton()" disabled="disabled">
+                    <i class="fa fa-trash-o fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledRestoreButton() }"></i>
+                    <i class="fa fa-share icon-gray" ng-class="{ 'icon-gray': isDisabledRestoreButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link ng-hide" title="Delete" ng-click="deleteButtonClick()" ng-show="isTrashFolder()" ng-disabled="isDisabledDeleteButton()" disabled="disabled">
+                    <i class="fa fa-trash-o fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledDeleteButton() }"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="content-box">
+            <table class="table-2 table-hover table-selector multiple-selector">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th class="text-right visible-lg">Modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="clickable-row back-btn">
+                        <td colspan="4"><span class="folder">/Folder</span></td>
+                    </tr>
+                    <tr class="clickable-row" btn-checkbox="">
+                        <td><span class="file"> File</span></td>
+                        <td>Document</td>
+                        <td>100 KB</td>
+                        <td class="text-right visible-lg">1/30/2015</td>
+                    </tr>
+                    <tr class="clickable-row" btn-checkbox="">
+                        <td><span class="file"> File</span></td>
+                        <td>Document</td>
+                        <td>100 KB</td>
+                        <td class="text-right visible-lg">1/30/2015</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- test -->
+    <!-- dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-animate.js"></script>
+    <script src="https://code.angularjs.org/1.2.23/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- app js -->
+    <script src="js/app.js"></script>
+    <script src="js/custom.js"></script>
+
+   
+   
+
+</body>
+
+</html>

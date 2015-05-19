@@ -1,0 +1,71 @@
+<div class="container" id="fileinspector_withFiles" style="display:none">
+    <div>
+        <div class="subStat trial" style="display:block">
+            30 days remaining in your Trial
+            <button type="button" class="btn btn-white">
+                Subscribe now!
+            </button>
+        </div>
+        <div class="input-group" style="margin-top:24px;">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" ng-model="$parent.query" class="form-control ng-pristine ng-untouched ng-valid" placeholder="Search for files or folders">
+        </div>
+
+
+        <div class="toolbar" style="text-align: right;
+  margin-top: 12px;">
+            <div class="icon-nav">
+                <span ng-show="filesDetails.checkedItemsCount > 0" class="ng-hide">
+            <span translate="storage-client.selected-items" translate-values="{ count: filesDetails.checkedItemsCount }" class="ng-scope">0 Selected</span>
+                </span>
+                <button type="button" class="btn btn-link" title="Download" ng-click="downloadButtonClick()" ng-disabled="isDisabledDownloadButton()" disabled="disabled">
+                    <i class="fa fa-cloud-download fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledDownloadButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link" title="Copy Url" ng-click="copyUrlButtonClick('lg')" ng-hide="isTrashFolder()" ng-disabled="isDisabledCopyUrlButton()" disabled="disabled">
+                    <i class="fa fa-link fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledCopyUrlButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link" title="Move To Trash" ng-click="trashButtonClick()" ng-show="!isTrashFolder()" ng-disabled="isDisabledTrashButton()" disabled="disabled">
+                    <i class="fa fa-trash-o fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledTrashButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link ng-hide" title="Restore From Trash" ng-click="restoreButtonClick()" ng-show="isTrashFolder()" ng-disabled="isDisabledRestoreButton()" disabled="disabled">
+                    <i class="fa fa-trash-o fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledRestoreButton() }"></i>
+                    <i class="fa fa-share icon-gray" ng-class="{ 'icon-gray': isDisabledRestoreButton() }"></i>
+                </button>
+                <button type="button" class="btn btn-link ng-hide" title="Delete" ng-click="deleteButtonClick()" ng-show="isTrashFolder()" ng-disabled="isDisabledDeleteButton()" disabled="disabled">
+                    <i class="fa fa-trash-o fa-2x icon-gray" ng-class="{ 'icon-gray': isDisabledDeleteButton() }"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="content-box">
+            <table class="table-2 table-hover table-selector multiple-selector">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th class="text-right visible-lg">Modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="clickable-row back-btn">
+                        <td colspan="4"><span class="folder">/Folder</span></td>
+                    </tr>
+                    <tr class="clickable-row" btn-checkbox="">
+                        <td><span class="file"> File</span></td>
+                        <td>Document</td>
+                        <td>100 KB</td>
+                        <td class="text-right visible-lg">1/30/2015</td>
+                    </tr>
+                    <tr class="clickable-row" btn-checkbox="">
+                        <td><span class="file"> File</span></td>
+                        <td>Document</td>
+                        <td>100 KB</td>
+                        <td class="text-right visible-lg">1/30/2015</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

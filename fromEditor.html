@@ -23,13 +23,14 @@
             <div class="global-actions" style="display:none">
             <div class="uploadCTA"><div class="tooltip-arrow"></div>Add a file or folder</div>
                
-                <button class="btn btn-lg btn-default" ng-click="trialStart = !trialStart">Add Folder<i class="fa fa-plus icon-right"></i></button>
-                 <button class="btn btn-lg btn-primary ng-click-active" ng-click="trialStart = !trialStart">Upload File <i class="fa fa-cloud-upload icon-right"></i></button>
+                <button class="btn btn-lg btn-default" onclick="showFileInspector_withFiles()">Add Folder<i class="fa fa-plus icon-right"></i></button>
+                 <button class="btn btn-lg ng-click-active" onclick="showFileInspector_withFiles()">Upload File <i class="fa fa-cloud-upload icon-right"></i></button>
             </div>
         </div>
     </div>
     <div ng-include="'partials/pitchdeck.html'" scope="" onload=""></div>
-    <div ng-include="'partials/fileinspector.html'" scope="" onload=""></div>
+    <div ng-include="'partials/fileinspector_noFiles.html'" scope="" onload=""></div>
+    <div ng-include="'partials/fileinspector_withFiles.html'" scope="" onload=""></div>
     <!-- test -->
     <!-- dependencies -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

@@ -1,117 +1,189 @@
+.btn {
+    outline: none;
+	outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+.btn:focus, .btn.active:focus, .btn:active:focus {
+    outline: none;
+	outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+}
 
 
 
 .uploadCTA {
-	position: relative;
-	left: -100px;
+    position: relative;
+    left: -100px;
     border: 1px solid #0d3f1a;
     background-color: #0d3f1a;
-	display: inline-block;
-	padding: 6px 22px;
-	margin-right: 12px;
-	border-radius: 6px;
-	color: white;
-
-	-webkit-border-radius: 6px;
+    display: inline-block;
+    padding: 6px 22px;
+    margin-right: 12px;
+    border-radius: 6px;
+    color: white;
+    -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-
-    -webkit-animation: fadein 2s forwards; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s forwards; /* Firefox < 16 */
-        -ms-animation: fadein 2s forwards; /* Internet Explorer */
-         -o-animation: fadein 2s forwards; /* Opera < 12.1 */
-            animation: fadein 2s forwards;
+    -webkit-animation: fadein 2s forwards;
+    /* Safari, Chrome and Opera > 12.1 */
+    
+    -moz-animation: fadein 2s forwards;
+    /* Firefox < 16 */
+    
+    -ms-animation: fadein 2s forwards;
+    /* Internet Explorer */
+    
+    -o-animation: fadein 2s forwards;
+    /* Opera < 12.1 */
+    
+    animation: fadein 2s forwards;
 }
 
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    100% { left: 0; }
-
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
 }
-
 /* Firefox < 16 */
+
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    100% { left: 0; }
-
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
 }
-
 /* Safari, Chrome and Opera > 12.1 */
+
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    100% { left: 0; }
-
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
 }
-
 /* Internet Explorer */
+
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    100% { left: 0; }
-
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
 }
-
 /* Opera < 12.1 */
+
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    100% { left: 0; }
-
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
 }
-
-
 
 .uploadCTA .tooltip-arrow {
-  top: 50%;
-  right: -5px;
-  margin-top: -5px;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #0d3f1a;
+    top: 50%;
+    right: -5px;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #0d3f1a;
 }
+
 .tooltip-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
 }
 
-
-
-.subStat-trial {
-	background: #4AB767;
-	width: 100%;
-	text-align: center;
-	color: white;
-	font-size: 17px;
-	margin-bottom: 12px;
-	padding: 4px;
-}
-
-	.subStat-trial .btn-white
-	 {
-	 	background-color: white;
-	 	color: green;
-	 	margin-left: 12px;
-	 }
 
 
 .noFilesAdded {
-	font-size: 16px;
-	color: #333;
-	text-align: center;
-
+    font-size: 16px;
+    color: #333;
+    text-align: center;
 }
 
 .noFilesAdded .product-graphic {
-	margin-bottom: 62px;
+    margin-bottom: 62px;
 }
 
 .noFilesAdded .btn .fa-2x {
-	font-size: 22px;
+    font-size: 22px;
 }
 
 
+
+
+
+/*
+SUBSCRIPTION STATUSES
+*/
+
+
+.subStat {
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    margin-bottom: 12px;
+    padding: 4px;
+    }
+    .subStat.active {
+        display: inline-block;
+    }
+
+    .subStat.trial {
+        background: #4AB767;
+        
+    }
+        .subStat.trial .btn-white {
+            background-color: white;
+            color: green;
+            margin-left: 12px;
+        }
+
+    .subStat.expired, .subStat.suspended {
+        background: red;
+    }
+    .subStat.expired .btn-white, .subStat.suspended .btn-white {
+            background-color: white;
+            color: red;
+            margin-left: 12px;
+        }
+
+
+#subscriberStatus {
+    display: none;
+      font-size: 12px;
+      border: 1px solid #00D200;
+      padding: 6px;
+      color: #1ACD1A;
+      bottom: 5px;
+      position: relative;
+}
