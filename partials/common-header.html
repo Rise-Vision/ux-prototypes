@@ -113,7 +113,10 @@
 <div class="dropdown-menu" role="menu">
   <ul class="ng-scope">
     <li class="dropdown-header">
-      <a ng-click="$parent.StatusID=1">Sign Out</a>
+      &nbsp;
+    </li>
+    <li class="dropdown-footer">
+      <button class="btn btn-default btn-sm" ng-click="$parent.StatusID=1">Sign Out <i class="fa fa-sign-out"></i></button>
     </li>
   </ul>
 </div>
@@ -123,7 +126,7 @@
   <button type="button" class="btn-primary btn add-right" ng-model="$parent.StatusID" ng-click="$parent.StatusID=2">
   <i class="fa fa-google"></i> Sign Up Free</button>
   <button type="button" class="register-user-menu-button action top-auth-button" ng-model="$parent.StatusID" ng-click="$parent.StatusID=2">
-    Sign In </button>
+    Sign In</button>
 </li>
  </ul>
     
