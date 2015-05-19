@@ -11,7 +11,9 @@
     border-color: transparent;
 }
 
-
+.fa.fa-cloud-upload::before {
+    color: green;
+}
 
 .uploadCTA {
     position: relative;
@@ -39,6 +41,22 @@
     
     animation: fadein 2s forwards;
 }
+/* arrow right*/
+.uploadCTA:after { 
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(13, 63, 26, 0);
+    border-left-color: #0d3f1a;
+    border-width: 8px;
+    margin-top: -8px;
+}
+
 
 @keyframes fadein {
     from {
@@ -104,21 +122,13 @@
     }
 }
 
-.uploadCTA .tooltip-arrow {
-    top: 50%;
-    right: -5px;
-    margin-top: -5px;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #0d3f1a;
-}
 
-.tooltip-arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-}
+
+
+
+
+
+
 
 
 
@@ -168,10 +178,10 @@ SUBSCRIPTION STATUSES
             margin-left: 12px;
         }
 
-    .subStat.expired, .subStat.suspended {
+    .subStat.expired, .subStat.suspended, .subStat.cancelled {
         background: red;
     }
-    .subStat.expired .btn-white, .subStat.suspended .btn-white {
+    .subStat.expired .btn-white, .subStat.suspended .btn-white, .subStat.cancelled .btn-white {
             background-color: white;
             color: red;
             margin-left: 12px;
@@ -187,3 +197,125 @@ SUBSCRIPTION STATUSES
       bottom: 5px;
       position: relative;
 }
+
+
+/*MOBILE SUBSCRIPTION HEADER CLASSES
+*/
+
+ @media screen and (max-width: 660px) {
+
+        
+          .uploadCTA {
+            width: 63%;
+            text-align: center;
+            padding: 4px 67px;
+            top: 44px;
+            left: 0;
+            margin-bottom: 22px;
+            -webkit-animation: fadeup 2s forwards;
+            /* Safari, Chrome and Opera > 12.1 */
+            
+            -moz-animation: fadeup 2s forwards;
+            /* Firefox < 16 */
+            
+            -ms-animation: fadeup 2s forwards;
+            /* Internet Explorer */
+            
+            -o-animation: fadeup 2s forwards;
+            /* Opera < 12.1 */
+            
+            animation: fadeup 2s forwards;
+
+            }
+
+            
+            /* arrow bottom*/
+          .uploadCTA:after {
+                top: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(13, 63, 26, 0);
+                border-top-color: #0d3f1a;
+                border-width: 8px;
+                margin-left: -8px;
+                margin-top: 0;
+            }
+
+            .app-header {
+                padding-top: 0;
+            }
+
+    }
+
+
+
+@keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+    }
+}
+/* Firefox < 16 */
+
+@-moz-keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+    }
+}
+/* Safari, Chrome and Opera > 12.1 */
+
+@-webkit-keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+    }
+}
+/* Internet Explorer */
+
+@-ms-keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+    }
+}
+/* Opera < 12.1 */
+
+@-o-keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+

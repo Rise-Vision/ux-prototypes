@@ -7,7 +7,7 @@
     <title>UX Prototype - Storage Trial (Signed In)</title>
     <!-- app css -->
     <link href="bower_components/rv-common-style/dist/css/rise.min.css" rel="stylesheet" type="text/css">
-     <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
@@ -16,19 +16,49 @@
     <div ng-include="'partials/common-header.html'" scope="" onload=""></div>
     <div class="container">
         <div class="app-header add-bottom">
+            <div id="mobileAnchor"></div>
             <div class="title-block">
                 <h1>Storage
                 <span id="subscriberStatus"> SUBSCRIBED </span>
                 </h1>
             </div>
             <div class="global-actions" style="display:none">
-            <div class="uploadCTA"><div class="tooltip-arrow"></div>Add a file or folder</div>
-               
+                <div class="uploadCTA">Add a file or folder</div>
                 <button class="btn btn-lg btn-default" onclick="showFileInspector_withFiles()">Add Folder<i class="fa fa-plus icon-right"></i></button>
-                 <button class="btn btn-lg ng-click-active" onclick="showFileInspector_withFiles()">Upload File <i class="fa fa-cloud-upload icon-right"></i></button>
+                <button class="btn btn-lg ng-click-active" onclick="showFileInspector_withFiles()">Upload File <i class="fa fa-cloud-upload icon-right"></i></button>
             </div>
         </div>
     </div>
+
+    <div id="desktopAnchor">
+       <div id="allStatuses">
+           <div class="subStat trial">
+                30 days remaining on your trial.
+                <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                    Subscribe now!
+                </button>
+            </div>
+            <div class="subStat expired">
+                Your trial has expired.
+                <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                    Subscribe now!
+                </button>
+            </div>
+            <div class="subStat cancelled">
+               Your subscription was cancelled.
+                <button type="button" class="btn btn-white" onclick="showNextSubStatus()">
+                    Subscribe now!
+                </button>
+            </div>
+            <div class="subStat suspended">
+                Your account is suspended.
+                <button type="button" class="btn btn-white" onclick="loadSubscribed()">
+                    View Invoices
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div ng-include="'partials/pitchdeck.html'" scope="" onload=""></div>
     <div ng-include="'partials/fileinspector_noFiles.html'" scope="" onload=""></div>
     <div ng-include="'partials/fileinspector_withFiles.html'" scope="" onload=""></div>
@@ -44,9 +74,6 @@
     <!-- app js -->
     <script src="js/app.js"></script>
     <script src="js/custom.js"></script>
-    
-    
-
 </body>
 
 </html>

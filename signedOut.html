@@ -28,9 +28,40 @@
             </div>
         </div>
     </div>
-    <div ng-include="'partials/pitchdeck.html'" scope="" onload=""></div>
-    <div ng-include="'partials/fileinspector_noFiles.html'" scope="" onload=""></div>
-    <div ng-include="'partials/fileinspector_withFiles.html'" scope="" onload=""></div>
+    <div class="container" id="pitchdeck">
+    <div class="content-box add-bottom blank-state" ng-hide="trialStart">
+        <div class="content-box-body">
+            <div class="product-graphic">
+                <div class="circled-icon">
+                    <svg-icon p="riseStorage"></svg-icon>
+                </div>
+                <div class="front-icon">
+                    <svg-icon p="riseStorageGraphic"></svg-icon>
+                </div>
+            </div>
+            <!--product-graphic-->
+            <div class="product-intro">
+                <p class="lead"><strong>Manage your digital signage content</strong> with our built-in media library for more convenient uploading, downloading and hosting of all of your digital signage assets.</p>
+                <p><strong>How Does the 30 Day Free Trial Work?</strong></p>
+                <p class="text-muted">Get full access to all features of Storage for 30 days. No credit card required.</p>
+                <p><strong>How Much Does it Cost?</strong></p>
+                <p class="text-muted">$10 per Company per Month</p>
+                <br>
+                <br>
+
+                <button type="button" style="padding:10px 42px;" class="btn btn-primary btn-lg">
+                Start Your Free Trial!
+                </button>
+
+                <!-- <a href="#">
+                    <img src="//s3.amazonaws.com/rise-common/images/logo-small.png" width="113" height="42" alt="Rise Vision">
+                    <p class="text-muted half-top">Enterprise Digital Signage Platform</p>
+                </a> -->
+            </div>
+        </div>
+    </div>
+    <!--content-box-shadow-->
+</div>
     <!-- test -->
     <!-- dependencies -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

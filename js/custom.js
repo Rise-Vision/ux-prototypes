@@ -5,6 +5,7 @@ function showFileInspector_noFiles() {
     $('#pitchdeck').hide();
     $('#fileinspector_noFiles').show();
     $('.global-actions').show();
+    $('.subStat.trial').addClass('active');
 
 }
 
@@ -39,3 +40,26 @@ function pageloadSignedIn() {
   function pageloadSignedOut() {
     $(location).attr('href', '/signedOut.html');
   }
+
+
+// media query event handler
+if (matchMedia) {
+  var mq = window.matchMedia("(min-width: 768px)");
+  mq.addListener(WidthChange);
+  WidthChange(mq);
+}
+
+// media query change
+function WidthChange(mq) {
+
+  if (mq.matches) {
+    //alert('greater');
+    $( "#allStatuses" ).detach().prependTo( "#desktopAnchor" );
+  }
+  else {
+    // alert('lessthan768');
+    $( "#allStatuses" ).detach().prependTo( "#mobileAnchor" );
+  }
+
+}
+
