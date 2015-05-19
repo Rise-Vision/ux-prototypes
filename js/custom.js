@@ -1,7 +1,10 @@
-$(document).ready(function() {
 
-    $("#beginTrial").click(function() {
-        console.log("Handler for .click() called.");
-    });
 
-});
+
+function showFileInspector() {
+    $('#pitchdeck').hide();
+    $('#fileinspector').show();
+    $('.global-actions').show();
+
+}
+
