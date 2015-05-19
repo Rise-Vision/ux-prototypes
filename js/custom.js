@@ -1,6 +1,3 @@
-
-
-
 function showFileInspector_noFiles() {
     $('#pitchdeck').hide();
     $('#fileinspector_noFiles').show();
@@ -8,7 +5,6 @@ function showFileInspector_noFiles() {
     $('.subStat.trial').addClass('active');
 
 }
-
 
 function showFileInspector_withFiles() {
     $('#pitchdeck').hide();
@@ -21,45 +17,43 @@ function showFileInspector_withFiles() {
 
 function showNextSubStatus() {
 
-  var activeStat = $('.subStat.active');
+    var activeStat = $('.subStat.active');
 
-  $(activeStat).removeClass('active');
-  $(activeStat).next().addClass('active');
+    $(activeStat).removeClass('active');
+    $(activeStat).next().addClass('active');
 }
 
 function loadSubscribed() {
 
     $('.subStat.active').removeClass('active');
-	$('#subscriberStatus').show();
+    $('#subscriberStatus').show();
 }
 
 function pageloadSignedIn() {
-  $(location).attr('href', '/signedIn.html');
-  }
+    $(location).attr('href', 'signedIn.html');
+}
 
-  function pageloadSignedOut() {
-    $(location).attr('href', '/signedOut.html');
-  }
+function pageloadSignedOut() {
+    $(location).attr('href', 'signedOut.html');
+}
 
 
 // media query event handler
 if (matchMedia) {
-  var mq = window.matchMedia("(min-width: 768px)");
-  mq.addListener(WidthChange);
-  WidthChange(mq);
+    var mq = window.matchMedia("(min-width: 768px)");
+    mq.addListener(WidthChange);
+    WidthChange(mq);
 }
 
 // media query change
 function WidthChange(mq) {
 
-  if (mq.matches) {
-    //alert('greater');
-    $( "#allStatuses" ).detach().prependTo( "#desktopAnchor" );
-  }
-  else {
-    // alert('lessthan768');
-    $( "#allStatuses" ).detach().prependTo( "#mobileAnchor" );
-  }
+    if (mq.matches) {
+        //alert('greater');
+        $("#allStatuses").detach().prependTo("#desktopAnchor");
+    } else {
+        // alert('lessthan768');
+        $("#allStatuses").detach().prependTo("#mobileAnchor");
+    }
 
 }
-
