@@ -13,18 +13,32 @@
 
   <body>
 
-
+<div ng-controller="MockupsAppController">
     <!-- Main View -->
     <div ng-include="'partials/common-header.html'" scope="" onload=""></div>
+
     <div class="container">
       <div class="app-header add-top add-bottom">
         <div class="title-block">
           <h1>Rise Vision UX Mockups</h1>
         </div>
-      </div> 
-    </div>
-    
+      </div>
 
+    <div class="well">
+      <div ng-show="StatusID == 1">Signed Out</div>
+      <div ng-show="StatusID == 2">Signed In</div>
+    </div>
+
+    </div>
+
+ 
+   
+
+
+
+
+
+</div><!--ng-controller-->
     <!-- dependencies -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>

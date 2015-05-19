@@ -1,29 +1,27 @@
-<nav class="navbar navbar-default navbar-static-top" id="sticky-nav">
+<nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header" style="width: 100%;">
-      <a href="index.html" class="navbar-brand visible-md visible-lg"><img src="../../img/logo.svg" class="img-responsive logo-small"></a>
+      <a href="index.html" class="navbar-brand visible-md visible-lg">
+        <img src="../../img/logo.svg" class="img-responsive logo-small">
+      </a>
       <a class="navbar-brand hidden-md hidden-lg text-center" href=""><i class="fa fa-bars"></i></a>
       
       <ul class="nav navbar-nav navbar-right actions-nav pull-right">
 
         <li class="dropdown system-messages hidden-xs hidden">
-          <a href="" class="system-messages-button">
-            <i class="fa fa-bell"></i>
-          </a>
+          <a href="" class="system-messages-button"><i class="fa fa-bell"></i></a>
         </li>
 
         <li class="shopping-cart hidden">
-          <a href="" class="shopping-cart-button">
-            <i class="fa fa-shopping-cart"></i>
-            <span id="cartBadge" class="label label-primary"></span>
-          </a>
+          <a href="" class="shopping-cart-button"><i class="fa fa-shopping-cart"></i><span id="cartBadge" class="label label-primary"></span></a>
         </li>
         
         <li class="dropdown hidden-xs">
           <a href="" class="dropdown-toggle"><i class="fa fa-th"></i></a>
             <div class="dropdown-menu app-navigation" role="menu">
               <ul>
-  <li>
+                <li>
+
     <div class="menu-box pull-right">
       <a href="#">
         <svg-icon p="riseStore"><svg xmlns="http://www.w3.org/2000/svg" width="32px" viewBox="0 0 32 32"><path d="M13.1 24h13.5 0.1c1 0 1.7-0.8 1.9-1.8l2.6-13.5C31.3 8.4 31 8 30.6 8h-21L13.1 24z"></path><path d="M26.6 26H11.5L6.7 4H1.6c-0.6 0-1 0.4-1 1s0.4 1 1 1h3.5l4.4 20.3c-0.9 0.4-1.6 1.4-1.6 2.5 0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7c0-0.2 0-0.5-0.1-0.7H24c-0.1 0.2-0.1 0.5-0.1 0.7 0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7S28.1 26 26.6 26z"></path></svg></svg-icon>
@@ -103,7 +101,7 @@
 </li>
 
 
-<li class="dropdown user-profile-dropdown desktop-menu-item hidden-xs hidden" on-toggle="toggled(open)">
+<li class="dropdown user-profile-dropdown desktop-menu-item hidden-xs" on-toggle="toggled(open)" ng-show="StatusID == 2">
   <a class="dropdown-toggle">
       <div class="user-id pull-left add-right" >
         <span class="username">John Doe</span>
@@ -115,16 +113,16 @@
 <div class="dropdown-menu" role="menu">
   <ul class="ng-scope">
     <li class="dropdown-header">
-      <a href="logout.html">Log Out</a>
+      <a ng-click="$parent.StatusID=1">Log Out</a>
     </li>
   </ul>
 </div>
 </li>
 
-<li >
-  <button type="button" class="btn-primary btn add-right">
+<li ng-show="StatusID == 1">
+  <button type="button" class="btn-primary btn add-right" ng-model="$parent.StatusID" ng-click="$parent.StatusID=2">
   <i class="fa fa-google"></i> Sign Up Free</button>
-  <button type="button" href="#" class="register-user-menu-button action top-auth-button">
+  <button type="button" class="register-user-menu-button action top-auth-button" ng-model="$parent.StatusID" ng-click="$parent.StatusID=2">
     Sign In </button>
 </li>
  </ul>
@@ -147,3 +145,5 @@
 </div>
   </div>
 </nav>
+
+
