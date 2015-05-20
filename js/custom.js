@@ -37,6 +37,9 @@ function pageloadSignedOut() {
     $(location).attr('href', 'signedOut.html');
 }
 
+function pageloadFromEditor() {
+    $(location).attr('href', 'fromEditor.html');
+}
 
 // media query event handler
 if (matchMedia) {

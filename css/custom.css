@@ -12,7 +12,7 @@
 }
 
 .fa.fa-cloud-upload::before {
-    color: green;
+    color: #03A903;
 }
 
 .uploadCTA {
