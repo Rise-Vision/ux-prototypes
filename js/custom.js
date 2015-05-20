@@ -3,6 +3,7 @@ function showFileInspector_noFiles() {
     $('#fileinspector_noFiles').show();
     $('.global-actions').show();
     $('.subStat.trial').addClass('active');
+    $('.icon-nav').show();
 
 }
 
