@@ -221,31 +221,41 @@ SUBSCRIPTION STATUSES
 
 /*TABLET GLOBAL BUTTON CLASSES
 */
-@media  (min-width: 769px) and (max-width: 1200px) {
+@media  (min-width: 768px) and (max-width: 1200px) {
 
         .app-header .title-block {
           float: left;
-          width: 25%;
+          width: 25% !important;
         }
 
         .app-header .global-actions {
           float: left;
-          width: 75%;
+          width: 75% !important;
 
         }
 
 }
 
 
-/*MOBILE SUBSCRIPTION HEADER CLASSES
+/* 1 pixel fix
 */
 
- @media screen and (max-width: 660px) {
+@media (max-width: 768px) {
+    .app-header .global-actions {
+      float: none;
+      margin-top: 10px;
+      width: 100% !important;
+    }
+}
+
+
+
+ @media screen and (max-width: 768px) {
 
         .app-header .global-actions {
                   text-align: center;
                 }
-                
+
         .product-graphic {
             margin: 44px auto 0;
             width: 116px;
