@@ -11,8 +11,26 @@
     border-color: transparent;
 }
 
+.btn-default:focus {
+    background: #E8E8E8;
+}
+
+.fa.fa-cloud-upload {
+    margin-left: 5px;
+}
 .fa.fa-cloud-upload::before {
     color: #03A903;
+    font-size: 21px;
+}
+
+
+
+.product-graphic {
+  text-align:center;
+  width: 128px;
+  height: 67px;
+  position: relative;
+  margin: 44px auto 0;
 }
 
 .uploadCTA {
@@ -139,7 +157,9 @@
 }
 
 .noFilesAdded .product-graphic {
-    margin-bottom: 62px;
+    /*margin-bottom: 62px;*/
+    text-align: center;
+    margin-top: 163px;
 }
 
 .noFilesAdded .btn .fa-2x {
@@ -199,12 +219,42 @@ SUBSCRIPTION STATUSES
 }
 
 
+/*TABLET GLOBAL BUTTON CLASSES
+*/
+@media  (min-width: 769px) and (max-width: 1200px) {
+
+        .app-header .title-block {
+          float: left;
+          width: 25%;
+        }
+
+        .app-header .global-actions {
+          float: left;
+          width: 75%;
+
+        }
+
+}
+
+
 /*MOBILE SUBSCRIPTION HEADER CLASSES
 */
 
  @media screen and (max-width: 660px) {
 
-        
+        .app-header .global-actions {
+                  text-align: center;
+                }
+                
+        .product-graphic {
+            margin: 44px auto 0;
+            width: 116px;
+
+        }
+        .noFilesAdded .product-graphic {
+            margin-top: 44px;
+        }
+
         
           .uploadCTA {
             width: 63%;
