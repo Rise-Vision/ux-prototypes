@@ -27,10 +27,11 @@
             <div ng-controller="TopButtonsController" class="ng-scope">
 
 
-                <div class="modal-header" style="margin-bottom: 10px">
+                <div class="modal-header" >
                     <button type="button" class="close" data-dismiss="modal" ng-click="closeButtonClick()">
                         <i class="fa fa-times"></i>
                     </button>
+                     <div id="mobileAnchor"></div>
                     <h3 class="modal-title ng-scope" update-title="" translate="storage-client.select-single-file">Select a File</h3>
                     <div class="selector-header">
                         <div class="icon-nav pull-right" ng-hide="activeSearch">
@@ -141,7 +142,7 @@
                 </div>
                 <!-- Pitch Deck  -->
                 <div class="container" id="pitchdeck">
-                    <div class="content-box add-bottom blank-state" ng-hide="trialStart">
+                    <div class="add-bottom blank-state" ng-hide="trialStart">
                         <div class="content-box-body">
                             <div class="product-graphic">
                                 <svg-icon p="riseStorage">
