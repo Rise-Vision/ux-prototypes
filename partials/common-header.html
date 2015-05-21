@@ -212,7 +212,10 @@
     </div>
 
     <div class="sub-company-alert test-company-alert hidden">This is a Test Company</div>
-    
+    <div ng-show="isSubcompanySelected &amp;&amp; !inRVAFrame" class="common-header-alert sub-company-alert ng-binding ng-scope">
+  You're in Sub-Company Subber&nbsp;
+  <a href="" ng-click="switchToMyCompany()" class="link-button">Switch to My Company</a>
+</div>
     <div class="common-header-alert sub-company-alert hidden">
   You're in Sub-Company john.doe@risevision.com's Company&nbsp;
   <a href="" ng-click="switchToMyCompany()" class="link-button">Switch to My Company</a>

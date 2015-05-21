@@ -18,10 +18,7 @@
 .fa.fa-cloud-upload {
     margin-left: 5px;
 }
-.fa.fa-cloud-upload::before {
-    color: #03A903;
-    font-size: 21px;
-}
+
 
 
 
@@ -34,6 +31,7 @@
 }
 
 .uploadCTA {
+    display:none !important;
     position: relative;
     left: -100px;
     border: 1px solid #0d3f1a;
@@ -199,11 +197,12 @@ SUBSCRIPTION STATUSES
         }
 
     .subStat.expired, .subStat.suspended, .subStat.cancelled {
-        background: red;
+        background: #F0B9B8;
+        color: #D20606;
     }
     .subStat.expired .btn-white, .subStat.suspended .btn-white, .subStat.cancelled .btn-white {
             background-color: white;
-            color: red;
+            color: #D20606;
             margin-left: 12px;
         }
 
