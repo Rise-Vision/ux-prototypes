@@ -2,7 +2,7 @@ function showFileInspector_noFiles() {
     $('#pitchdeck').hide();
     $('#fileinspector_noFiles').show();
     $('.global-actions').show();
-    $('.subStat.trial').addClass('active');
+    $('.subscription-status.trial').addClass('active');
     $('.icon-nav').show();
 
 }
@@ -18,7 +18,7 @@ function showFileInspector_withFiles() {
 
 function showNextSubStatus() {
 
-    var activeStat = $('.subStat.active');
+    var activeStat = $('.subscription-status.active');
 
     $(activeStat).removeClass('active');
     $(activeStat).next().addClass('active');
@@ -26,7 +26,7 @@ function showNextSubStatus() {
 
 function loadSubscribed() {
 
-    $('.subStat.active').removeClass('active');
+    $('.subscription-status.active').removeClass('active');
     $('#subscriberStatus').show();
 }
 

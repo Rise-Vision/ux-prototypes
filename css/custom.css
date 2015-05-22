@@ -19,8 +19,11 @@
     margin-left: 5px;
 }
 
-
-
+/*EXISTING CLASS CHANGE - PRODUCTS
+*/.product-intro {
+  text-align: center;
+  max-width: 523px;
+}
 
 .product-graphic {
   text-align:center;
@@ -173,7 +176,7 @@ SUBSCRIPTION STATUSES
 */
 
 
-.subStat {
+.subscription-status {
     display: none;
     width: 100%;
     text-align: center;
@@ -182,25 +185,25 @@ SUBSCRIPTION STATUSES
     margin-bottom: 12px;
     padding: 4px;
     }
-    .subStat.active {
+    .subscription-status.active {
         display: inline-block;
     }
 
-    .subStat.trial {
+    .subscription-status.trial {
         background: #4AB767;
         
     }
-        .subStat.trial .btn-white {
+        .subscription-status.trial .btn-white {
             background-color: white;
             color: green;
             margin-left: 12px;
         }
 
-    .subStat.expired, .subStat.suspended, .subStat.cancelled {
+    .subscription-status.expired, .subscription-status.suspended, .subscription-status.cancelled {
         background: #F0B9B8;
         color: #D20606;
     }
-    .subStat.expired .btn-white, .subStat.suspended .btn-white, .subStat.cancelled .btn-white {
+    .subscription-status.expired .btn-white, .subscription-status.suspended .btn-white, .subscription-status.cancelled .btn-white {
             background-color: white;
             color: #D20606;
             margin-left: 12px;
