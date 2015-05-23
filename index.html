@@ -27,8 +27,6 @@
 
 
 <div ng-controller="MockupsAppController">
-
-
     <!-- Main View -->
     <div ng-include="'partials/common-header.html'" scope="" onload="" ng-init="navs = [{
       url:'ux.html',
@@ -43,25 +41,96 @@
         </div>
       </div>
 
+      <h2>Signed In and Out States</h2>
+      <hr>
       <h3>How To Use?</h3>
-    <p>Show Something Signed Out</p>
-          <code>ng-show="StatusID == 1"</code>
-    <p class="add-top">Show Something Signed In</p>
-          <code>ng-show="StatusID == 2"</code>
+      <p>Show Something Signed Out</p>
+      <code>ng-show="StatusID == 1"</code>
+      <p class="add-top">Show Something Signed In</p>
+      <code>ng-show="StatusID == 2"</code>
 
 
-    <div class="well add-top">
-      <div class="animate bounceIn" ng-show="StatusID == 1"><h4>Signed Out</h4></div>
-      <div class="animate bounceIn" ng-show="StatusID == 2"><h4>Signed In</h4></div>
-    </div>
+      <div class="well add-top">
+        <div class="animate bounceIn" ng-show="StatusID == 1"><h4>Signed Out</h4></div>
+        <div class="animate bounceIn" ng-show="StatusID == 2"><h4>Signed In</h4></div>
+      </div>
 
-    </div>
+      <h2>Stylesheets</h2>
+      <hr>
+      <h3>Alerts</h3>
+      <code>_alerts.scss</code>
 
- 
-   
+      <div class="alert alert-warning">
+        <p>I'm an alert</p>
+      </div>
+      <div class="alert alert-danger">
+        <p>I'm an alert</p>
+      </div>
+
+      <hr>
+      <h3>Buttons</h3>
+      <code>_buttons.scss</code>
+
+      <a href="#" class="btn btn-default">Default Button</a>
+      <a href="#" class="btn btn-primary">Primary Button</a>
+      <a href="#" class="btn btn-primary btn-lg">Large Button</a>
+      <a href="#" class="btn btn-primary btn-hg">Huge Button</a>
+
+      <hr>
+      <h3>Input Groups</h3>
+      <code>_input-groups.scss</code>
+
+      <p class="add-top">Regular Addon</p>
+      <div class="input-group">
+        <input type="text" class="form-control">
+        <div class="input-group-addon">
+          Normal Addon
+        </div>
+      </div>
+
+      <p class="add-top">Custom Addon</p>
+      <div class="input-group custom-addon">
+        <input type="text" class="form-control">
+        <div class="input-group-addon">
+          <i class="fa fa-check icon-left"></i>Custom Addon
+        </div>
+      </div>
 
 
+      <hr>
+      <h3>Form Groups</h3>
+      <code>_input-groups.scss</code>
 
+      <div class="form-group form-inline add-top">
+        <label class="control-label">Label</label>
+        <input type="text" class="form-control">
+        <div class="form-control-static">Some Number</div>
+      </div>
+
+      <hr>
+      <h3>Labels</h3>
+      <code>_labels.scss</code>
+
+      <div class="label label-primary">I'm a label</div>
+
+      <div class="label label-success">I'm a label</div>
+
+
+      <hr>
+      <h3>Panels</h3>
+      <code>_panels.scss</code>
+
+      <div class="panel add-top">
+        <div class="panel-heading">
+          <h3>Header</h3>
+        </div>
+        <div class="panel-body">
+          Body
+        </div>
+      </div>
+
+      <br><br><br><br><br><br><br><br><br>
+    </div><!--container-->
 
 
 </div><!--ng-controller-->
