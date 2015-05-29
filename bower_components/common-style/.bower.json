@@ -1,0 +1,34 @@
+{
+  "name": "rv-common-style",
+  "version": "1.2.1",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "www"
+  ],
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.2.0",
+    "seiyria-bootstrap-slider": "~3.1.0",
+    "select2": "~3.4",
+    "spectrum": "git://github.com/Rise-Vision/spectrum"
+  },
+  "dependencies": {
+    "font-awesome": "~4.1.0",
+    "rv-common-style": "git://github.com/Rise-Vision/common-style"
+  },
+  "homepage": "https://github.com/Rise-Vision/common-style",
+  "_release": "1.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.1",
+    "commit": "2bbb4826f02bfcaf7cb73afe7efa976d404cb003"
+  },
+  "_source": "https://github.com/Rise-Vision/common-style.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/Rise-Vision/common-style.git"
+}

@@ -1,0 +1,10 @@
+{
+  "autoplay": {
+    "label": "Auto Play"
+  },
+  "heading": "Video",
+  "settings": "Video Settings",
+  "volume": {
+    "label": "Volume"
+  }
+}

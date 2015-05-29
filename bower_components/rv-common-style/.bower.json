@@ -21,11 +21,11 @@
     "rv-common-style": "git://github.com/Rise-Vision/common-style"
   },
   "homepage": "https://github.com/Rise-Vision/common-style",
-  "_release": "8b6d061f8d",
+  "_release": "32ff935e7f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "8b6d061f8dc4e059d23165ae671f7fbb523b0e96"
+    "commit": "32ff935e7f6ba9f3307011135f5290f6073bb40d"
   },
   "_source": "git://github.com/Rise-Vision/common-style.git",
   "_target": "master",
