@@ -1,0 +1,22 @@
+.file-empty-state {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    padding-bottom: 222px;
+}
+
+.file-empty-state .product-graphic {
+    text-align: center;
+    margin-top: 163px;
+}
+.file-empty-state .product-graphic svg-icon {
+	margin-left:41px;
+}
+
+.file-empty-state .btn {
+    padding: 2px;
+}
+
+.file-empty-state .btn .fa-2x {
+    font-size: 22px;
+}

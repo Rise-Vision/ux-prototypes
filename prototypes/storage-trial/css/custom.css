@@ -1,3 +1,5 @@
+/* DEPRECATED */
+
 .btn {
     outline: none;
 	outline-style: none;
@@ -153,6 +155,9 @@
 
 
 
+
+
+
 /*
 SUBSCRIPTION STATUSES
 */
@@ -245,7 +250,7 @@ SUBSCRIPTION STATUSES
             width: 116px;
 
         }
-        .file-empty-state .product-graphic {
+        .noFilesAdded .product-graphic {
             margin-top: 44px;
         }
 
