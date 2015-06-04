@@ -340,6 +340,7 @@
 		<br/>
 
 		<!--Layout-->
+	<div id="layouts" >
 		<div class="row">
 		<div class="form-group">
 		<p><strong>&emsp;Layout</strong></p>
@@ -354,21 +355,53 @@
 				</label>
 			</div>
 			<div class="col-md-4">
-				<label class="radio-inline add-bottom">
+				<label class="radio-inline">
 					<input type="radio" name="layoutRadioOptions" value="0" style="height: 280px;"><img src="img/1x2-layout.png">
 				</label>
 			</div>
 		</div>
 		</div>
-		 
-		 <div class="row">
+		
+		<!--Custom Layout Radio-->
+		<div class="row">
 		<div class="form-group">
 			<div class="col-md-12">
 				<label class="radio-inline">
-					<input type="radio" name="layoutRadioOptions" value="1">Use Custom Layout
+					<input type ="radio" id="radio-id" name="layoutRadioOptions" >Custom Layout URL</input>
 				</label>
 			</div>
 		</div>
+		</div>
+		 
+		<!-- Show DIV if Custom Radio Selected-->
+		 <div id="custom-layout" style='display:none;'> 
+			 <div class="form-group">
+				<input name="url" type="null" class="form-control" placeholder="http://">
+					<p ng-if="!valid &amp;&amp; invalidType === 'url'" class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>
+				<div class="checkbox" ng-show="forcedValid || !valid">
+					<label class="ng-binding">
+						<input name="validate-url" type="checkbox" value="validate-url" checked="checked"> Validate URL
+					</label>
+				</div>
+			</div>
+		<div>
+
+		<!-- Jquery for show/hide of Custom Layout Div-->
+		<script>
+		$("#layouts").click(function(){
+		if ($("#radio-id").is(":checked")) {
+
+				//show the hidden div
+				 $("#custom-layout").show("slide");
+
+			} else {
+
+
+				$("#custom-layout").hide("slide");
+			}
+		});
+		</script>
+			 
 		</div>
 	 
 	</div><!-- End Modal Body-->
