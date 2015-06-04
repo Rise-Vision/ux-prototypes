@@ -8,6 +8,8 @@
 
     <!-- app css -->
     <link href="../../bower_components/rv-common-style/dist/css/rise.min.css" rel="stylesheet" type="text/css">
+	  <link href="../../bower_components/rv-bootstrap-formhelpers/dist/css/rv-bootstrap-formhelpers.css" rel="stylesheet" type="text/css">
+	  <link href="../../bower_components/bootstrap-select/bootstrap-select.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- dependencies -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -17,45 +19,373 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-animate.js"></script>
     <script src="https://code.angularjs.org/1.2.23/angular-touch.js"></script>
     <script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="../../bower_components/bootstrap-form-components/dist/js/angular/bootstrap-font-picker.js"></script>
     <!-- app js -->
     <script src="../../js/app.js"></script>
   </head>
 
   <body>
+	<!-- Header Nav -->
+	<div ng-init="navs = [{
+	url:'menu.html',
+	label:'Menu Item'
+	}]">
+	</div>
 
-  <!-- Header Nav -->
-  <div ng-init="navs = [{
-    url:'menu.html',
-    label:'Menu Item'
-    }]">
-  </div>
-
-
-    <!-- Main View -->
+	<!-- Main View -->
     <div ng-include="'../../partials/common-header.html'" scope="" onload=""></div>
-    <div class="container-fluid">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="app-header" style="padding:15px">
-              <div class="title-block">
-                <h1>Google Spreadsheet</h1>
-                <div class="store-status-2">
-                  <h3>Subscribed</h3>
-                </div>
-              </div>
-              <div class="global-actions">
-                <button class="btn btn-default btn-lg">Cancel <i class="fa fa-times icon-right"></i></button>
-                <button class="btn btn-primary btn-lg">Save <i class="fa fa-check icon-right"></i></button>
-              </div>
-            </div>
-          </div>
-          <div class="modal-body">
-            Content Here
-          </div>
-        </div>
-    </div>
-    
+	<div class="container-fluid">
+    <div class="modal-dialog modal-lg">
+	<!-- MODAL-->
+	<div class="modal-content">
+			
+	<!-- Start Modal Header-->
+	<div class="modal-header">
+		<div class="app-header" style="padding:15px">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="closeModal()">
+				<i class="fa fa-times"></i>
+			</button>
+		  <div class="title-block">
+			<h1>RSS Settings</h1>
+			<button class="btn btn-link">
+				<i class="fa fa-github fa-2x"></i> 
+			</button>
+			<!--<button class="btn btn-link">
+				<i class="fa fa-question-circle fa-2x"></i> 
+			</button>-->
+		  </div>
+		</div>
+	  </div><!-- End Modal Header-->
 
-    
+	<!-- Start Modal Body-->
+	 <div class="modal-body">
+
+		<!-- RSS URL-->
+		<div class="form-group">
+			<label ng-if="!hideLabel" class="ng-binding ng-scope">RSS URL</label>
+			<input name="url" type="null" class="form-control" placeholder="http://">
+			<p ng-if="!valid &amp;&amp; invalidType === 'url'" class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>
+		  <div class="checkbox" ng-show="forcedValid || !valid">
+			<label class="ng-binding">
+			  <input name="validate-url" type="checkbox" value="validate-url" checked="checked"> Validate URL
+			</label>
+		  </div>
+	</div><!-- END RSS URL-->
+		<br> 
+
+		<!-- Stories To Display-->
+		<div class="row">	 
+			<div class="col-md-3">
+			  <div class="form-group">
+				<label class="control-label">Stories to Display</label>
+				<input type="number" class="form-control" value="2">
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="form-group">
+				<label class="control-label">Queue</label>
+				<input type="number" class="form-control" value="5">
+			  </div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+				<label class="control-label">Refresh Interval</label>
+				   <div class="input-group">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="5">
+					   <span class="input-group-addon ng-binding">min</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+			  <div class="form-group">
+			  </div>
+			</div>
+		</div>
+
+		<!-- Transitions-->		 
+		<div class="row">	 
+			<div class="col-md-3">
+			  <div class="form-group">
+				<label class="control-label">Transition</label>
+				<select class="form-control">
+				  <option value="Fade">Fade</option>
+					<option value="Fade">Row</option>
+					<option value="Fade">Page</option>
+					<option value="Fade">Continuous</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-3">
+				<label class="control-label">Transition Hold</label>
+				<div class="input-group">
+				  <input id="scroll-horizontal" name="scrollHorizontal" type="number" class="form-control" value="5">
+				  <span class="input-group-addon ng-binding">sec</span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+				</div>
+			</div>
+		</div>
+
+		<!-- Data Selection -->
+		<div class="row">	 
+			<div class="checkbox">
+				<div class="form-group">
+				<p><strong>&emsp;Data Selection</strong></p>
+				<div class="col-md-2">
+				  <label class="radio-inline add-bottom">
+					<input type="radio" name="inlineRadioOptions" value="1" checked> Full Story&emsp;&emsp;
+				  </label>
+				</div>
+				<div class="col-md-2">
+					<label class="radio-inline add-bottom">
+					<input type="radio" name="inlineRadioOptions" value="0" > Story Snippet&emsp;&emsp;
+				  </label>
+				</div>
+				<div class="col-md-2">
+					<label class="add-bottom">
+					  <input type="checkbox" checked="checked" > Title&emsp;&emsp;
+					</label>
+				</div>
+				<div class="col-md-2">
+					<label class="add-bottom">
+					  <input type="checkbox" checked="checked"> Date&emsp;&emsp;
+					</label>
+				</div>
+				<div class="col-md-2">
+					<label class="add-bottom">
+					  <input type="checkbox" checked="checked"> Author&emsp;&emsp;
+					</label>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<br/>
+
+		<!--Heading Format-->			 
+		<div class="row">	 
+			<div class="col-md-12">
+			  <label class="control-label">Heading Format</label>
+			<ul class="list-inline">
+			  <li class="pull-left">
+				<font-picker>
+				  <div class="font-picker">
+			<div class="bfh-selectbox">
+			<input class="font-family" type="hidden" value="Verdana">
+			<button type="button" class="btn btn-default btn-sm dropdown-toggle font-select-btn" data-toggle="bfh-selectbox">
+			<span class="bfh-selectbox-option">Verdana</span>
+			<span class="caret selectbox-caret"></span>
+			</button>
+			<div class="bfh-selectbox-options">
+			<div role="listbox">
+
+			</div>
+			</div>
+			</div>
+
+			<!-- Custom Font -->
+			<div class="custom-font modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="false">
+			<div class="modal-dialog">
+
+			</div>
+			</div>
+			</div></font-picker>
+			  </li>
+
+			  <li class="pull-left">
+				<font-size-picker ng-model="fontData.size" class="ng-pristine ng-valid"><select class="form-control bfh-fontsizes" data-style="btn-default btn-sm" style="display: none;"><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="14">14</option><option value="18">18</option><option value="24">24</option><option value="30">30</option><option value="36">36</option><option value="48">48</option><option value="60">60</option><option value="72">72</option><option value="96">96</option></select><div class="btn-group bootstrap-select form-control bfh-fontsizes"><button type="button" class="btn dropdown-toggle selectpicker btn-default btn-sm" data-toggle="dropdown" title="20"><span class="filter-option pull-left">20</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open"></div></div></font-size-picker>
+			  </li>
+			  <li class="pull-left font-setting-button">
+				<font-style bold="fontData.bold" italic="fontData.italic" underline="fontData.underline" class="ng-isolate-scope"><div class="btn-group">
+			<a class="btn btn-sm btn-default bold" data-wysihtml5-command="bold" title="CTRL+B" tabindex="-1">B</a>
+			<a class="btn btn-sm btn-default italic" data-wysihtml5-command="italic" title="CTRL+I" tabindex="-1">I</a>
+			<a class="btn btn-sm btn-default underline" data-wysihtml5-command="underline" title="CTRL+U" tabindex="-1">U</a>
+			</div>
+			</font-style>
+			  </li>
+			  <li class="pull-left font-setting-button">
+				<input color-picker="" type="text" color="fontData.color" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer text-color-picker sp-light"><div class="sp-preview" style="border-color: rgb(0, 0, 0);"><div class="sp-preview-inner"><div class="sp-preview-char">A</div></div></div><b class="caret"></b></div>
+			  </li>
+			  <li class="pull-left font-setting-button">
+				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer highlight-color-picker sp-light"><div class="sp-preview"><div class="sp-preview-inner" style="background-color: rgba(0, 0, 0, 0);"><img src="http://s3.amazonaws.com/rise-common-test/scripts/spectrum/images/text-highlight.png"></div></div><b class="caret"></b></div>
+			  </li>
+			  <!-- ngIf: !hideAlignment --><li class="pull-left ng-scope" ng-if="!hideAlignment">
+				<alignment align="fontData.align" class="font-setting-button ng-isolate-scope"><div class="btn-group alignment">
+			<button type="button" class="btn btn-default btn-sm btn-alignment dropdown-toggle" data-toggle="dropdown" data-wysihtml5-command-value="left">
+			<i class="fa fa-align-left"></i>
+			<span class="caret"></span>
+			</button>
+			<div class="dropdown-menu" role="menu">
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="left" tabindex="-1">
+				<i class="fa fa-align-left"></i>
+			  </button>
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="center" tabindex="-1">
+				<i class="fa fa-align-center"></i>
+			  </button>
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="right" tabindex="-1">
+				<i class="fa fa-align-right"></i>
+			  </button>
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="justify" tabindex="-1">
+				<i class="fa fa-align-justify"></i>
+			  </button>
+			</div>
+			</div>
+			</div>
+			</alignment>
+			  </li><!-- end ngIf: !hideAlignment -->
+			</ul>
+			</div>
+		</div>  
+		<div class="row">
+			<div class="col-md-12">	 
+				<div class="font-picker-text form-group">
+					<span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Column Header Sample Text</span>
+				</div>
+			</div>
+		</div>
+		<!--End Heading Format-->
+
+		<!--Story Format-->
+		<div class="row">
+			<div class="col-md-12">
+			  <label class="control-label">Story Format</label>
+			<ul class="list-inline">
+			  <li class="pull-left">
+				<font-picker>
+				  <div class="font-picker">
+			<div class="bfh-selectbox">
+			<input class="font-family" type="hidden" value="Verdana">
+			<button type="button" class="btn btn-default btn-sm dropdown-toggle font-select-btn" data-toggle="bfh-selectbox">
+			<span class="bfh-selectbox-option">Verdana</span>
+			<span class="caret selectbox-caret"></span>
+			</button>
+			<div class="bfh-selectbox-options">
+			<div role="listbox">
+
+			</div>
+			</div>
+			</div>
+
+
+			<!-- Custom Font -->
+			<div class="custom-font modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="false">
+			<div class="modal-dialog">
+
+			</div>
+			</div>
+			</div></font-picker>
+			  </li>
+
+			  <li class="pull-left">
+				<font-size-picker ng-model="fontData.size" class="ng-pristine ng-valid"><select class="form-control bfh-fontsizes" data-style="btn-default btn-sm" style="display: none;"><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="14">14</option><option value="18">18</option><option value="24">24</option><option value="30">30</option><option value="36">36</option><option value="48">48</option><option value="60">60</option><option value="72">72</option><option value="96">96</option></select><div class="btn-group bootstrap-select form-control bfh-fontsizes"><button type="button" class="btn dropdown-toggle selectpicker btn-default btn-sm" data-toggle="dropdown" title="20"><span class="filter-option pull-left">20</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open"></div></div></font-size-picker>
+			  </li>
+			  <li class="pull-left font-setting-button">
+				<font-style bold="fontData.bold" italic="fontData.italic" underline="fontData.underline" class="ng-isolate-scope"><div class="btn-group">
+			<a class="btn btn-sm btn-default bold" data-wysihtml5-command="bold" title="CTRL+B" tabindex="-1">B</a>
+			<a class="btn btn-sm btn-default italic" data-wysihtml5-command="italic" title="CTRL+I" tabindex="-1">I</a>
+			<a class="btn btn-sm btn-default underline" data-wysihtml5-command="underline" title="CTRL+U" tabindex="-1">U</a>
+			</div>
+			</font-style>
+			  </li>
+			  <li class="pull-left font-setting-button">
+				<input color-picker="" type="text" color="fontData.color" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer text-color-picker sp-light"><div class="sp-preview" style="border-color: rgb(0, 0, 0);"><div class="sp-preview-inner"><div class="sp-preview-char">A</div></div></div><b class="caret"></b></div>
+			  </li>
+			  <li class="pull-left font-setting-button">
+				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer highlight-color-picker sp-light"><div class="sp-preview"><div class="sp-preview-inner" style="background-color: rgba(0, 0, 0, 0);"><img src="http://s3.amazonaws.com/rise-common-test/scripts/spectrum/images/text-highlight.png"></div></div><b class="caret"></b></div>
+			  </li>
+			  <!-- ngIf: !hideAlignment --><li class="pull-left ng-scope" ng-if="!hideAlignment">
+				<alignment align="fontData.align" class="font-setting-button ng-isolate-scope"><div class="btn-group alignment">
+			<button type="button" class="btn btn-default btn-sm btn-alignment dropdown-toggle" data-toggle="dropdown" data-wysihtml5-command-value="left">
+			<i class="fa fa-align-left"></i>
+			<span class="caret"></span>
+			</button>
+			<div class="dropdown-menu" role="menu">
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="left" tabindex="-1">
+				<i class="fa fa-align-left"></i>
+			  </button>
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="center" tabindex="-1">
+				<i class="fa fa-align-center"></i>
+			  </button>
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="right" tabindex="-1">
+				<i class="fa fa-align-right"></i>
+			  </button>
+			  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="justify" tabindex="-1">
+				<i class="fa fa-align-justify"></i>
+			  </button>
+			</div>
+			</div>
+			</div>
+			</alignment>
+			  </li><!-- end ngIf: !hideAlignment -->
+			</ul>
+			</div>
+		</div>  
+		<div class="row">
+			<div class="col-md-12">	 
+				<div class="font-picker-text form-group">
+				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Column Header Sample Text</span>
+				</div>
+			 </div>
+		</div>
+		<!--End Story Format-->			 
+		<hr/>
+		<br/>
+
+		<!--Layout-->
+		<div class="row">
+		<div class="form-group">
+		<p><strong>&emsp;Layout</strong></p>
+			<div class="col-md-4">
+				<label class="radio-inline add-bottom">
+					<input type="radio" name="layoutRadioOptions" value="1" style="height: 80px;" checked><img src="img/4x1-layout.png">
+				</label>
+			</div>
+			<div class="col-md-4">
+				<label class="radio-inline add-bottom">
+					<input type="radio" name="layoutRadioOptions" value="0" style="height: 140px;"><img src="img/2x1-layout.png">
+				</label>
+			</div>
+			<div class="col-md-4">
+				<label class="radio-inline add-bottom">
+					<input type="radio" name="layoutRadioOptions" value="0" style="height: 280px;"><img src="img/1x2-layout.png">
+				</label>
+			</div>
+		</div>
+		</div>
+		 
+		 <div class="row">
+		<div class="form-group">
+			<div class="col-md-12">
+				<label class="radio-inline">
+					<input type="radio" name="layoutRadioOptions" value="1">Use Custom Layout
+				</label>
+			</div>
+		</div>
+		</div>
+	 
+	</div><!-- End Modal Body-->
+		
+	<!--Modal Footer-->
+	<div class="form-group">
+		<div class="modal-footer">
+			<div class="global-actions">
+				<button class="btn btn-primary btn-lg">Save <i class="fa fa-check icon-right"></i></button>
+				<button class="btn btn-default btn-lg">Cancel <i class="fa fa-times icon-right"></i></button>
+			</div>
+		</div>
+	</div><!-- End Modal Footer-->
+		
+	</div><!-- End Modal Content-->
+	</div><!-- End Modal -->
+	</div><!-- End Container Fluid-->
+
   </body>
 </html>
