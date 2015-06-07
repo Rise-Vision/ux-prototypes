@@ -20,7 +20,7 @@ MockupsApp.config(function($stateProvider, $urlRouterProvider) {
     ;     
 });
 
-MockupsApp.controller('MockupsAppController', function($scope) {
+MockupsApp.controller('MockupsAppController', function ($scope, $modal, $log) {
 
   $scope.a = {
   "Statuses":
@@ -32,22 +32,34 @@ MockupsApp.controller('MockupsAppController', function($scope) {
   };
   $scope.StatusID=1;
 
+  $scope.items = ['item1', 'item2', 'item3'];
+
+  $scope.animationsEnabled = true;
+
+  $scope.open = function (size) {
+
+  var modalInstance = $modal.open({
+    animation: $scope.animationsEnabled,
+    templateUrl: 'myModalContent.html',
+    controller: 'ModalInstanceCtrl',
+    size: size,
+    resolve: {
+      items: function () {
+      return $scope.items;
+      }
+    }
+  });
+
+  modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+
+
 });
-
-MockupsApp.controller('DropdownCtrl', function ($scope, $log) {
-
-  $scope.status = {
-    isopen: false
-  };
-
-  $scope.toggled = function(open) {
-    $log.log('Dropdown is now: ', open);
-  };
-
-  $scope.toggleDropdown = function($event) {
-    $event.preventDefault();
-    $event.stopPropagation();
-    $scope.status.isopen = !$scope.status.isopen;
-  };
-});
-
