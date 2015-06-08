@@ -236,16 +236,16 @@ SUBSCRIPTION STATUSES
 
  @media screen and (max-width: 768px) {
 
-        .app-header .global-actions {
+        .app-header .global-actions {  /*goes in .app-header*/
                   text-align: center;
                 }
 
-        .product-graphic {
+        .product-graphic {  /*.store.scss*/
             margin: 44px auto 0;
             width: 116px;
 
         }
-        .file-empty-state .product-graphic {
+        .file-empty-state .product-graphic {  /*.fes*/
             margin-top: 44px;
         }
 
