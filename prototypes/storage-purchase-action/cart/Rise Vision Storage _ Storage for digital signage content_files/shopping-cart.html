@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://store.risevision.com/shopping-cart?cid=760aec25-a74c-4632-ab9c-8053b1b32a06&inRVA -->
+<html ng-app="store" itemscope="" itemtype="http://schema.org/Product" class="js inlinesvg ng-scope">
+
+<head>
+    <link rel="stylesheet" href="https://store.risevision.com/css/all.min.css">
+    <script type="text/javascript" src="modernizr.js"></script>
+    <!-- Change this URL when deploying to Production. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="gadgets.min.js"></script>
+    <link href="../../css/custom.css" rel="stylesheet" type="text/css">
+    <script src="../../js/validator.min.js"></script>
+    <script src="../../js/custom.js"></script>
+    <script src="main.min.js"></script>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body ng-class="{&#39;in-rva-iframe&#39;: inRVAFrame}" class="in-rva-iframe">
+        <div ui-view="" class="ng-scope">
+            <!-- ngIf: userState.alternateStoreAPIBaseURL -->
+            <common-header nav-options="navOptions" hide-help-menu="1" hide-shopping-cart="false" class="ng-scope">
+                <!-- Common Header Navbar -->
+                <nav class="navbar navbar-default navbar-static-top" ng-class="{&#39;double-margin&#39;: isSubcompanySelected}" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header" style="width: 100%;">
+                            <!-- ngIf: !inRVAFrame -->
+                            <a class="navbar-brand hidden-md hidden-lg text-center" href="" off-canvas-toggle="">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <!-- If User Authenticated -->
+                            <!-- Action Nav -->
+                            <ul class="nav navbar-nav navbar-right actions-nav pull-right">
+                                <!-- Notifications -->
+                                <!-- ngIf: !inRVAFrame -->
+                                <!-- Shopping Cart -->
+                                <!-- ngInclude: undefined -->
+                                <li class="shopping-cart ng-scope" ng-show="!hideShoppingCart &amp;&amp; isRiseVisionUser">
+                                    <a href="https://store.risevision.com/shopping-cart" class="shopping-cart-button">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span id="cartBadge" class="label label-primary ng-binding" ng-show="cart.items.length">
+    1</span>
+                                    </a>
+                                </li>
+                                <!-- Shopping Cart -->
+                                <!-- ngIf: inRVAFrame -->
+                                <!-- ngInclude: undefined -->
+                                <li class="close-frame ng-scope">
+                                    <a href="" class="close-frame-button" >
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </li>
+                                <!-- end ngIf: inRVAFrame -->
+                                <!-- Current App -->
+                                <!-- ngIf: !inRVAFrame -->
+                                <!-- END Current App -->
+                                <!-- Auth -->
+                                <!-- ngIf: !inRVAFrame -->
+                                <!-- ngIf: inRVAFrame -->
+                                <li ng-if="inRVAFrame" ng-controller="AuthButtonsCtr" class="ng-scope"></li>
+                                <!-- end ngIf: inRVAFrame -->
+                            </ul>
+                            <!-- END Action Nav -->
+                            <!-- Nav Links -->
+                            <div class="navbar-collapse navbar-left hidden-xs hidden-sm">
+                                <ul class="nav navbar-nav">
+                                    <!-- ngRepeat: opt in navOptions -->
+                                    <li ng-repeat="opt in navOptions" class="ng-scope">
+                                        <a ng-href="/" target="" ng-class="{&#39;selected&#39;: opt.states &amp;&amp; opt.states.indexOf(navSelected) &gt; -1}" class="ng-binding" href="https://store.risevision.com/" >Store</a>
+                                    </li>
+                                    <!-- end ngRepeat: opt in navOptions -->
+                                    <!-- ngIf: !inRVAFrame && !hideHelpMenu -->
+                                </ul>
+                            </div>
+                            <!-- END Nav Links -->
+                        </div>
+                        <!-- ngInclude: undefined -->
+                        <div ng-show="isTestCompanySelected" class="sub-company-alert test-company-alert ng-scope ng-hide">
+                            This is a Test Company
+                        </div>
+                        <!-- ngInclude: undefined -->
+                        <div ng-show="isSubcompanySelected &amp;&amp; !inRVAFrame" class="common-header-alert sub-company-alert ng-binding ng-scope ng-hide">
+                            You're in Sub-Company adrian.dalimonte@risevision.com's Company&nbsp;
+                            <a href="" ng-click="switchToMyCompany()" class="link-button">Switch to My Company</a>
+                        </div>
+                    </div>
+                </nav>
+                <!-- ngInclude: undefined -->
+                <div class="container ng-scope">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- ngRepeat: msg in errors -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END Common Header Navbar -->
+                <!-- Off Canvas Version of the Nav -->
+                <nav class="off-canvas-nav off-canvas--nav off-canvas--container" off-canvas-nav="">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li off-canvas-toggle="">
+                            <i class="fa fa-times fa-2x pull-right"></i>
+                            <img src="logo-small.png" class="img-responsive logo-small" width="113" height="42" alt="Rise Vision">
+                        </li>
+                        <!-- ngRepeat: opt in navOptions -->
+                        <li ng-repeat="opt in navOptions" class="ng-scope">
+                            <a ng-href="/" target="" class="ng-binding" href="https://store.risevision.com/">Store</a>
+                        </li>
+                        <!-- end ngRepeat: opt in navOptions -->
+                        <!-- ngIf: !hideHelpMenu -->
+                    </ul>
+                </nav>
+                <iframe name="logoutFrame" id="logoutFrame" style="display:none"></iframe>
+            </common-header>
+            <div class="wrapper ng-scope">
+            </div>
+            <!-- uiView:  -->
+            <div class="container ng-scope" ui-view="">
+                <div ng-show="!isLoggedIn" class="ng-scope ng-hide">
+                    <h4>
+		Please Sign In in order to view this page.
+	</h4>
+                </div>
+                <div ng-show="isLoggedIn &amp;&amp; !isRiseVisionUser" class="ng-scope ng-hide">
+                    <h4>
+		You are not a registered Rise Vision user.
+	</h4>
+                </div>
+                <div class="shopping-cart ng-scope ng-isolate-scope" rv-spinner="defaultSpinnerOptions" rv-spinner-key="shopping-cart-form" rv-spinner-start-active="0">
+                    <div ng-show="active" class="spinner-backdrop fade  ng-hide" ng-class="{in: active}" us-spinner="rvSpinnerOptions" spinner-key="shopping-cart-form"></div>
+                    <div class="row" ng-show="isRiseVisionUser">
+                        <div class="col-sm-6">
+                            <div class="inner-box">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <h2 class="bill-to">Bill To</h2>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <ul class="list-unstyled pull-right address-icons">
+                                            <li>
+                                                <a href="" class="btn-box" data-toggle="modal" data-target="#BillToAddress">
+                                                    <i class="fa fa-pencil fa-2x"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="BillToAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-content" modal-transclude="">
+                <!-- Edit Company Address Modal -->
+                <div class="address-editor ng-scope" tabindex="-1" role="dialog" aria-labelledby="address-editor-label" aria-hidden="true">
+                    <div rv-spinner="defaultSpinnerOptions" rv-spinner-key="address-edit-modal" rv-spinner-start-active="0" class="ng-isolate-scope">
+                        <div ng-show="active" class="spinner-backdrop fade  ng-hide" ng-class="{in: active}" us-spinner="rvSpinnerOptions" spinner-key="address-edit-modal"></div>
+                    </div>
+                    <div class="modal-header" style="padding: 3px 15px;">
+                        <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <h2 id="address-editor-label" class="modal-title ng-binding">Edit Bill To Address</h2>
+                    </div>
+                    <div class="modal-body" style="padding-top:0">
+                        <!-- ngIf: normalizedAddress && !errors.length -->
+                        <div class="alert alert-danger ng-hide" ng-show="errors.length">
+                            <strong>Address Validation Error</strong>
+                            <ul>
+                                <!-- ngRepeat: err in errors -->
+                            </ul>
+                        </div>
+                        <form role="form" class="ng-pristine ng-valid" data-toggle="validator">
+                            <!-- ngIf: contact -->
+                        <div class="row">
+                            <div class="form-group ng-scope col-xs-6" ng-if="contact">
+                                <label for="firstName" class="control-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" data-minlength="2" required>
+                                <div class="help-block with-errors"></div>
+
+                            </div>
+                            <!-- end ngIf: contact -->
+                            <!-- ngIf: contact -->
+                            <div class="form-group ng-scope col-xs-6" ng-if="contact">
+                                <label for="lastName" class="control-label">
+                                    Last Name
+                                </label>
+                                <input id="lastName" type="text" class="form-control ng-pristine ng-untouched ng-valid" required >
+                                 <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                            <!-- end ngIf: contact -->
+                            <!-- ngIf: contact -->
+                           
+                            <!-- end ngIf: contact -->
+                            <!-- ngIf: contact -->
+                        <div class="row">
+                            <div class="form-group ng-scope col-xs-6" ng-if="contact">
+                                <label for="email" class="control-label">
+                                    Email
+                                </label>
+                                <input type="email" data-error="That email address is invalid" required class="form-control ng-pristine ng-untouched ng-valid">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group ng-scope col-xs-6" ng-if="contact">
+                                <label for="phone" class="control-label">
+                                    Phone
+                                </label>
+                                <input id="phone" type="number" class="form-control ng-pristine ng-untouched ng-valid" required data-minlength="9" 
+                                data-error="Required!"
+                                data-minlength-error="At least 9 digits">
+                                 <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                            <!-- end ngIf: contact -->
+                           <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="companyName" class="control-label">
+                                    Company
+                                </label>
+                                <input id="companyName" type="text" class="form-control ng-pristine ng-untouched ng-valid" >
+                                 <div class="help-block with-errors"></div>
+                            </div>
+                            </div>
+
+                            <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="street" class="control-label">
+                                    Address (Line 1)
+                                </label>
+                                <input id="street" type="text" class="form-control ng-pristine ng-untouched ng-valid" required >
+                                 <div class="help-block with-errors"></div>
+                            </div>
+                            </div>
+
+                            <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="unit" class="control-label">
+                                    Address (Line 2)
+                                </label>
+                                <input id="unit" type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="company.unit">
+                                 <div class="help-block with-errors"></div>
+                            </div>
+                            </div>
+
+    <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label for="city" class="control-label">
+                                    City
+                                </label>
+                                <input id="city" type="text" class="form-control ng-pristine ng-untouched ng-valid" required >
+                                 <div class="help-block with-errors"></div>
+                            </div>
+
+      <div class="form-group col-xs-6">
+        <label for="country" class="control-label">
+          Country
+        </label>
+        <select class="form-control ng-pristine ng-untouched ng-valid" ng-model="company.country" ng-options="c.code as c.name for c in countries"><option value="" class="">&lt; Select Country &gt;</option><option value="0" label="Afghanistan">Afghanistan</option><option value="1" label="Albania">Albania</option><option value="2" label="Algeria">Algeria</option><option value="3" label="American Samoa">American Samoa</option><option value="4" label="Andorra">Andorra</option><option value="5" label="Angola">Angola</option><option value="6" label="Anguilla">Anguilla</option><option value="7" label="Antarctica">Antarctica</option><option value="8" label="Antigua and Barbuda">Antigua and Barbuda</option><option value="9" label="Argentina">Argentina</option><option value="10" label="Armenia">Armenia</option><option value="11" label="Aruba">Aruba</option><option value="12" label="Australia">Australia</option><option value="13" label="Austria">Austria</option><option value="14" label="Azerbaijan">Azerbaijan</option><option value="15" label="Bahamas">Bahamas</option><option value="16" label="Bahrain">Bahrain</option><option value="17" label="Bangladesh">Bangladesh</option><option value="18" label="Barbados">Barbados</option><option value="19" label="Belarus">Belarus</option><option value="20" label="Belgium">Belgium</option><option value="21" label="Belize">Belize</option><option value="22" label="Benin">Benin</option><option value="23" label="Bermuda">Bermuda</option><option value="24" label="Bhutan">Bhutan</option><option value="25" label="Bolivia">Bolivia</option><option value="26" label="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option><option value="27" label="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="28" label="Botswana">Botswana</option><option value="29" label="Bouvet Island">Bouvet Island</option><option value="30" label="Brazil">Brazil</option><option value="31" label="British Indian Ocean Territory">British Indian Ocean Territory</option><option value="32" label="British Virgin Islands">British Virgin Islands</option><option value="33" label="Brunei Darussalam">Brunei Darussalam</option><option value="34" label="Bulgaria">Bulgaria</option><option value="35" label="Burkina Faso">Burkina Faso</option><option value="36" label="Burundi">Burundi</option><option value="37" label="Cabo Verde">Cabo Verde</option><option value="38" label="Cambodia">Cambodia</option><option value="39" label="Cameroon">Cameroon</option><option value="40" selected="selected" label="Canada">Canada</option><option value="41" label="Cayman Islands">Cayman Islands</option><option value="42" label="Central African Republic">Central African Republic</option><option value="43" label="Chad">Chad</option><option value="44" label="Chile">Chile</option><option value="45" label="China">China</option><option value="46" label="Christmas Island">Christmas Island</option><option value="47" label="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option><option value="48" label="Colombia">Colombia</option><option value="49" label="Comoros">Comoros</option><option value="50" label="Congo">Congo</option><option value="51" label="Congo, the Democratic Republic of the">Congo, the Democratic Republic of the</option><option value="52" label="Cook Islands">Cook Islands</option><option value="53" label="Costa Rica">Costa Rica</option><option value="54" label="Croatia">Croatia</option><option value="55" label="Cuba">Cuba</option><option value="56" label="Curaçao">Curaçao</option><option value="57" label="Cyprus">Cyprus</option><option value="58" label="Czech Republic">Czech Republic</option><option value="59" label="Côte d'Ivoire">Côte d'Ivoire</option><option value="60" label="Denmark">Denmark</option><option value="61" label="Djibouti">Djibouti</option><option value="62" label="Dominica">Dominica</option><option value="63" label="Dominican Republic">Dominican Republic</option><option value="64" label="Ecuador">Ecuador</option><option value="65" label="Egypt">Egypt</option><option value="66" label="El Salvador">El Salvador</option><option value="67" label="Equatorial Guinea">Equatorial Guinea</option><option value="68" label="Eritrea">Eritrea</option><option value="69" label="Estonia">Estonia</option><option value="70" label="Ethiopia">Ethiopia</option><option value="71" label="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option><option value="72" label="Faroe Islands">Faroe Islands</option><option value="73" label="Fiji">Fiji</option><option value="74" label="Finland">Finland</option><option value="75" label="France">France</option><option value="76" label="French Guiana">French Guiana</option><option value="77" label="French Polynesia">French Polynesia</option><option value="78" label="French Southern Territories">French Southern Territories</option><option value="79" label="Gabon">Gabon</option><option value="80" label="Gambia">Gambia</option><option value="81" label="Georgia">Georgia</option><option value="82" label="Germany">Germany</option><option value="83" label="Ghana">Ghana</option><option value="84" label="Gibraltar">Gibraltar</option><option value="85" label="Greece">Greece</option><option value="86" label="Greenland">Greenland</option><option value="87" label="Grenada">Grenada</option><option value="88" label="Guadeloupe">Guadeloupe</option><option value="89" label="Guam">Guam</option><option value="90" label="Guatemala">Guatemala</option><option value="91" label="Guernsey">Guernsey</option><option value="92" label="Guinea">Guinea</option><option value="93" label="Guinea-Bissau">Guinea-Bissau</option><option value="94" label="Guyana">Guyana</option><option value="95" label="Haiti">Haiti</option><option value="96" label="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option><option value="97" label="Holy See (Vatican City State)">Holy See (Vatican City State)</option><option value="98" label="Honduras">Honduras</option><option value="99" label="Hong Kong">Hong Kong</option><option value="100" label="Hungary">Hungary</option><option value="101" label="Iceland">Iceland</option><option value="102" label="India">India</option><option value="103" label="Indonesia">Indonesia</option><option value="104" label="Iran">Iran</option><option value="105" label="Iraq">Iraq</option><option value="106" label="Ireland">Ireland</option><option value="107" label="Isle of Man">Isle of Man</option><option value="108" label="Israel">Israel</option><option value="109" label="Italy">Italy</option><option value="110" label="Jamaica">Jamaica</option><option value="111" label="Japan">Japan</option><option value="112" label="Jersey">Jersey</option><option value="113" label="Jordan">Jordan</option><option value="114" label="Kazakhstan">Kazakhstan</option><option value="115" label="Kenya">Kenya</option><option value="116" label="Kiribati">Kiribati</option><option value="117" label="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option><option value="118" label="Korea, Republic of">Korea, Republic of</option><option value="119" label="Kuwait">Kuwait</option><option value="120" label="Kyrgyzstan">Kyrgyzstan</option><option value="121" label="Lao People's Democratic Republic">Lao People's Democratic Republic</option><option value="122" label="Latvia">Latvia</option><option value="123" label="Lebanon">Lebanon</option><option value="124" label="Lesotho">Lesotho</option><option value="125" label="Liberia">Liberia</option><option value="126" label="Libya">Libya</option><option value="127" label="Liechtenstein">Liechtenstein</option><option value="128" label="Lithuania">Lithuania</option><option value="129" label="Luxembourg">Luxembourg</option><option value="130" label="Macau">Macau</option><option value="131" label="Macedonia, the former Yugoslav Republic of">Macedonia, the former Yugoslav Republic of</option><option value="132" label="Madagascar">Madagascar</option><option value="133" label="Malawi">Malawi</option><option value="134" label="Malaysia">Malaysia</option><option value="135" label="Maldives">Maldives</option><option value="136" label="Mali">Mali</option><option value="137" label="Malta">Malta</option><option value="138" label="Marshall Islands">Marshall Islands</option><option value="139" label="Martinique">Martinique</option><option value="140" label="Mauritania">Mauritania</option><option value="141" label="Mauritius">Mauritius</option><option value="142" label="Mayotte">Mayotte</option><option value="143" label="Mexico">Mexico</option><option value="144" label="Micronesia">Micronesia</option><option value="145" label="Moldova">Moldova</option><option value="146" label="Monaco">Monaco</option><option value="147" label="Mongolia">Mongolia</option><option value="148" label="Montenegro">Montenegro</option><option value="149" label="Montserrat">Montserrat</option><option value="150" label="Morocco">Morocco</option><option value="151" label="Mozambique">Mozambique</option><option value="152" label="Myanmar">Myanmar</option><option value="153" label="Namibia">Namibia</option><option value="154" label="Nauru">Nauru</option><option value="155" label="Nepal">Nepal</option><option value="156" label="Netherlands">Netherlands</option><option value="157" label="New Caledonia">New Caledonia</option><option value="158" label="New Zealand">New Zealand</option><option value="159" label="Nicaragua">Nicaragua</option><option value="160" label="Niger">Niger</option><option value="161" label="Nigeria">Nigeria</option><option value="162" label="Niue">Niue</option><option value="163" label="Norfolk Island">Norfolk Island</option><option value="164" label="Northern Mariana Islands">Northern Mariana Islands</option><option value="165" label="Norway">Norway</option><option value="166" label="Oman">Oman</option><option value="167" label="Pakistan">Pakistan</option><option value="168" label="Palau">Palau</option><option value="169" label="Palestine, State of">Palestine, State of</option><option value="170" label="Panama">Panama</option><option value="171" label="Papua New Guinea">Papua New Guinea</option><option value="172" label="Paraguay">Paraguay</option><option value="173" label="Peru">Peru</option><option value="174" label="Philippines">Philippines</option><option value="175" label="Pitcairn">Pitcairn</option><option value="176" label="Poland">Poland</option><option value="177" label="Portugal">Portugal</option><option value="178" label="Puerto Rico">Puerto Rico</option><option value="179" label="Qatar">Qatar</option><option value="180" label="Reunion">Reunion</option><option value="181" label="Romania">Romania</option><option value="182" label="Russian Federation">Russian Federation</option><option value="183" label="Rwanda">Rwanda</option><option value="184" label="Saint Barthélemy">Saint Barthélemy</option><option value="185" label="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option><option value="186" label="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="187" label="Saint Lucia">Saint Lucia</option><option value="188" label="Saint Martin (French part)">Saint Martin (French part)</option><option value="189" label="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option><option value="190" label="Samoa">Samoa</option><option value="191" label="San Marino">San Marino</option><option value="192" label="Sao Tome and Principe">Sao Tome and Principe</option><option value="193" label="Saudi Arabia">Saudi Arabia</option><option value="194" label="Senegal">Senegal</option><option value="195" label="Serbia">Serbia</option><option value="196" label="Seychelles">Seychelles</option><option value="197" label="Sierra Leone">Sierra Leone</option><option value="198" label="Singapore">Singapore</option><option value="199" label="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option><option value="200" label="Slovakia">Slovakia</option><option value="201" label="Slovenia">Slovenia</option><option value="202" label="Solomon Islands">Solomon Islands</option><option value="203" label="Somalia">Somalia</option><option value="204" label="South Africa">South Africa</option><option value="205" label="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option><option value="206" label="South Sudan">South Sudan</option><option value="207" label="Spain">Spain</option><option value="208" label="Sri Lanka">Sri Lanka</option><option value="209" label="St. Pierre and Miquelon">St. Pierre and Miquelon</option><option value="210" label="Sudan">Sudan</option><option value="211" label="Suriname">Suriname</option><option value="212" label="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option><option value="213" label="Swaziland">Swaziland</option><option value="214" label="Sweden">Sweden</option><option value="215" label="Switzerland">Switzerland</option><option value="216" label="Syrian Arab Republic">Syrian Arab Republic</option><option value="217" label="Taiwan">Taiwan</option><option value="218" label="Tajikistan">Tajikistan</option><option value="219" label="Tanzania, United Republic of">Tanzania, United Republic of</option><option value="220" label="Thailand">Thailand</option><option value="221" label="Timor-Leste">Timor-Leste</option><option value="222" label="Togo">Togo</option><option value="223" label="Tokelau">Tokelau</option><option value="224" label="Tonga">Tonga</option><option value="225" label="Trinidad and Tobago">Trinidad and Tobago</option><option value="226" label="Tunisia">Tunisia</option><option value="227" label="Turkey">Turkey</option><option value="228" label="Turkmenistan">Turkmenistan</option><option value="229" label="Turks and Caicos Islands">Turks and Caicos Islands</option><option value="230" label="Tuvalu">Tuvalu</option><option value="231" label="Uganda">Uganda</option><option value="232" label="Ukraine">Ukraine</option><option value="233" label="United Arab Emirates">United Arab Emirates</option><option value="234" label="United Kingdom">United Kingdom</option><option value="235" label="United States">United States</option><option value="236" label="Uruguay">Uruguay</option><option value="237" label="US Minor Outlying Islands">US Minor Outlying Islands</option><option value="238" label="US Virgin Islands">US Virgin Islands</option><option value="239" label="Uzbekistan">Uzbekistan</option><option value="240" label="Vanuatu">Vanuatu</option><option value="241" label="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option><option value="242" label="Viet Nam">Viet Nam</option><option value="243" label="Wallis and Futuna Islands">Wallis and Futuna Islands</option><option value="244" label="Western Sahara">Western Sahara</option><option value="245" label="Yemen">Yemen</option><option value="246" label="Zambia">Zambia</option><option value="247" label="Zimbabwe">Zimbabwe</option><option value="248" label="Åland Islands">Åland Islands</option></select>
+         <div class="help-block with-errors"></div>
+      </div>
+    </div>
+
+
+      <div class="row">
+      <div class="form-group col-xs-6">
+        <label for="state" class="control-label">
+          State / Province
+        </label>
+        <input id="province" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-hide" ng-model="company.province" ng-hide="company.country == 'US' || company.country == 'CA'">
+        <select class="form-control ng-pristine ng-untouched ng-valid" ng-model="company.province" ng-options="c[1] as c[0] for c in regionsCA" ng-show="company.country == 'CA'"><option value="" class="">&lt; Select Province &gt;</option><option value="0" label="Alberta">Alberta</option><option value="1" label="British Columbia">British Columbia</option><option value="2" label="Manitoba">Manitoba</option><option value="3" label="New Brunswick">New Brunswick</option><option value="4" label="Newfoundland and Labrador">Newfoundland and Labrador</option><option value="5" label="Northwest Territories">Northwest Territories</option><option value="6" label="Nova Scotia">Nova Scotia</option><option value="7" label="Nunavut">Nunavut</option><option value="8" selected="selected" label="Ontario">Ontario</option><option value="9" label="Prince Edward Island">Prince Edward Island</option><option value="10" label="Quebec">Quebec</option><option value="11" label="Saskatchewan">Saskatchewan</option><option value="12" label="Yukon Territory">Yukon Territory</option></select>
+        <select class="form-control ng-pristine ng-untouched ng-valid ng-hide" ng-model="company.province" ng-options="c[1] as c[0] for c in regionsUS" ng-show="company.country == 'US'"><option value="" class="">&lt; Select State &gt;</option><option value="0" label="Alabama">Alabama</option><option value="1" label="Alaska">Alaska</option><option value="2" label="Arizona">Arizona</option><option value="3" label="Arkansas">Arkansas</option><option value="4" label="California">California</option><option value="5" label="Colorado">Colorado</option><option value="6" label="Connecticut">Connecticut</option><option value="7" label="Delaware">Delaware</option><option value="8" label="District of Columbia">District of Columbia</option><option value="9" label="Florida">Florida</option><option value="10" label="Georgia">Georgia</option><option value="11" label="Hawaii">Hawaii</option><option value="12" label="Idaho">Idaho</option><option value="13" label="Illinois">Illinois</option><option value="14" label="Indiana">Indiana</option><option value="15" label="Iowa">Iowa</option><option value="16" label="Kansas">Kansas</option><option value="17" label="Kentucky">Kentucky</option><option value="18" label="Louisiana">Louisiana</option><option value="19" label="Maine">Maine</option><option value="20" label="Maryland">Maryland</option><option value="21" label="Massachusetts">Massachusetts</option><option value="22" label="Michigan">Michigan</option><option value="23" label="Minnesota">Minnesota</option><option value="24" label="Mississippi">Mississippi</option><option value="25" label="Missouri">Missouri</option><option value="26" label="Montana">Montana</option><option value="27" label="Nebraska">Nebraska</option><option value="28" label="Nevada">Nevada</option><option value="29" label="New Hampshire">New Hampshire</option><option value="30" label="New Jersey">New Jersey</option><option value="31" label="New Mexico">New Mexico</option><option value="32" label="New York">New York</option><option value="33" label="North Carolina">North Carolina</option><option value="34" label="North Dakota">North Dakota</option><option value="35" label="Ohio">Ohio</option><option value="36" label="Oklahoma">Oklahoma</option><option value="37" label="Oregon">Oregon</option><option value="38" label="Pennsylvania">Pennsylvania</option><option value="39" label="Rhode Island">Rhode Island</option><option value="40" label="South Carolina">South Carolina</option><option value="41" label="South Dakota">South Dakota</option><option value="42" label="Tennessee">Tennessee</option><option value="43" label="Texas">Texas</option><option value="44" label="Utah">Utah</option><option value="45" label="Vermont">Vermont</option><option value="46" label="Virginia">Virginia</option><option value="47" label="Washington">Washington</option><option value="48" label="West Virginia">West Virginia</option><option value="49" label="Wisconsin">Wisconsin</option><option value="50" label="Wyoming">Wyoming</option></select>
+         <div class="help-block with-errors"></div>
+      </div>
+     <div class="form-group col-xs-6">
+    <label for="zip" class="control-label">
+        Zip / Postal Code
+    </label>
+    <input id="zip" type="text" class="form-control ng-pristine ng-untouched ng-valid"  required >
+     <div class="help-block with-errors"></div>
+</div>
+</div>
+
+<!-- ngIf: !contact -->
+</form>
+</div>
+<div class="modal-footer" style="padding-top:0">
+    <div class="row">
+        <div class="col-sm-12">
+            
+            <!-- <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-fixed-width" style="pointer-events: all; cursor: pointer;">Submit</button>
+          </div> -->
+
+            <button type="button" class="btn btn-primary btn-fixed-width" onclick="pageloadCart()">Save
+                <i class="fa fa-white fa-check icon-right"></i>
+            </button>
+            
+            <button type="button" class="btn btn-default btn-fixed-width" ng-click="$dismiss()" aria-hidden="true">Cancel
+                <i class="fa fa-white fa-times icon-right"></i>
+            </button>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+
+                                </div>
+                               <div class="address ng-binding">
+                    adrian.dalimonte@risevision.com's Company<br>
+                    1240 Hedgestone Crescent<br>
+                    unit 454<!-- ngIf: billToCopy.unit --><br ng-if="billToCopy.unit" class="ng-scope"><!-- end ngIf: billToCopy.unit -->
+                    Oakville, ON, L6M 1X6<br>
+                    Canada
+                </div>
+
+                                <div class="alert alert-danger" onclick="pageloadCart()">
+                                <strong>Cannot place order until address is updated.</strong>
+                            	</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="inner-box">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <h2 class="ship-to">Ship To</h2>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <ul class="list-unstyled pull-right address-icons">
+                                            <li>
+                                                <a href="" class="btn-box" popover="Edit Address" popover-trigger="mouseenter" popover-placement="left" onclick="pageloadCart()">
+                                                    <i class="fa fa-pencil fa-2x"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="address ng-binding">
+                    Adrian D'Alimonte<br>
+                    adrian.dalimonte@risevision.com<br>
+                    Unit 454<!-- ngIf: shipToContact.phone --><br ng-if="shipToContact.phone" class="ng-scope"><!-- end ngIf: shipToContact.phone -->
+                    adrian.dalimonte@risevision.com's Company<br>
+                    1240 Hedgestone Cres<br>
+                    <!-- ngIf: shipToCopy.unit -->
+                    Oakville, ON, L6M 1X6<br>
+                    Canada
+                </div>
+                                <div class="alert alert-danger">
+                                <strong>Cannot place order until address is updated.</strong>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ngIf: billToAddressErrors.length || shipToAddressErrors.length -->
+                    
+                    <!-- Purchases -->
+                    <div class="purchases inner-box" ng-show="!purchasesPaid &amp;&amp; (items.length &gt; 0)">
+                        <h2 class="title">Review Your Order</h2>
+                        <div ng-show="items.length &gt; 0">
+                            <div ng-form="shoppingCartForm" class="table-responsive ng-pristine ng-valid">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Item</th>
+                                            <th class="text-center col-qty">Qty</th>
+                                            <th class="text-right">Price</th>
+                                            <th>Unit</th>
+                                            <th class="text-right">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- Metered -->
+                                    <tbody>
+                                        <!-- ngRepeat: item in items | filter:{paymentTerms:'Metered'} track by $index -->
+                                    </tbody>
+                                    <!-- Subscription -->
+                                    <tbody>
+                                        <!-- ngRepeat: item in items | filter:{paymentTerms:'Subscription'} track by $index -->
+                                        <tr ng-repeat="item in items | filter:{paymentTerms:&#39;Subscription&#39;} track by $index " class="ng-scope">
+                                            <td class="text-center">
+                                                <a href="" class="btn-remove" ng-click="removeItem(item)">
+                                                    <i class="fa fa-minus-circle"></i>
+                                                </a>
+                                            </td>
+                                            <td class="ng-binding">
+                                                Rise Storage
+                                                <a ng-href="" ng-show="item.termsUrl | fixUrl" class="ng-hide">Terms &amp; Conditions</a>
+                                            </td>
+                                            <td class="text-center">
+                                                1
+                                            </td>
+                                            <td class="text-right ng-binding">
+                                                $10.00
+                                            </td>
+                                            <td class="ng-binding" style="padding: 6px 9px;">
+                                               <select class="form-control" style="width: inherit;">
+												  <option>Per Company, Per Month</option>
+												  <option>Per Company, Per Year</option>
+												</select>
+                                            </td>
+                                            <td class="text-right ng-binding">
+                                                $10.00
+                                            </td>
+                                        </tr>
+                                        <!-- end ngRepeat: item in items | filter:{paymentTerms:'Subscription'} track by $index -->
+                                    </tbody>
+                                    <!-- COC -->
+                                    <tbody>
+                                        <!-- ngRepeat: item in items | filter:{paymentTerms:'COC'} track by $index -->
+                                    </tbody>
+                                    <!-- COD -->
+                                    <tbody>
+                                        <!-- ngRepeat: item in items | filter:{paymentTerms:'COD'} track by $index -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-7 col-md-8 col-lg-9">
+                                </div>
+                                <div class="col-sm-5 col-md-4 col-lg-3">
+                                    <table class="table subtotals">
+                                        <tbody>
+                                            <tr>
+                                                <td>Shipping:</td>
+                                                <td class="text-right ng-binding">$</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estimated Taxes:</td>
+                                                <td class="text-right ng-binding">$</td>
+                                            </tr>
+                                            <!-- ngRepeat: tax in taxes -->
+                                            <!-- ngIf: taxExemptionApplied -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr class="hr-thick">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <!-- ngIf: restrictedByShipTo -->
+                                </div>
+                                <div class="col-sm-3 col-md-2">
+                                    <button class="btn btn-success fade" ng-class="{in:(qtyDirty &amp;&amp; shoppingCartForm.$valid)}" type="button" ng-click="update()">
+                                        Update
+                                        <i class="fa fa-white fa-check icon-right"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-2" ng-class="{in:taxesCalculated}">
+                                    <span class="order-total">Order Total:</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-2">
+                                    <span class="order-total ng-binding">$<span style="font-size:13px; margin-left: 12px;"></span></span>
+                                </div>
+                                <div class="clearfix visible-xs"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-2 fade" ng-class="{in:taxesCalculated}">
+                                    <span class="order-currency">Currency:</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-2" ng-class="{in:taxesCalculated}">
+                                   <!--  <span class="order-currency ng-binding">CAD</span> -->
+                                </div>
+                                <div class="clearfix visible-xs"></div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-7 col-md-8 col-lg-9">
+                                    <p class="terms ng-binding">
+                                        If you are <span class="highlighted">TAX EXEMPT</span> please send your exemption certificate and this ID 760aec25-a74c-4632-ab9c-8053b1b32a06 to <a href="mailto:store@risevision.com" style="color: #2d60ad; text-decoration: none;">store@risevision.com</a> before you make your purchase. We will notify you by email when your account has been setup so that you can complete this purchase tax free. Please note that we <span class="highlighted">CANNOT REFUND TAXES</span> after a purchase has been made.
+                                        <br>
+                                        <br> By Purchasing your Products you acknowledge that you are in agreement with our <a href="https://store.risevision.com/terms" target="_blank">Terms &amp; Conditions</a> and the Terms &amp; Conditions of your Products, if any.
+                                    </p>
+                                </div>
+                                <div class="col-sm-5 col-md-4 col-lg-3 text-right buttons">
+                                    <!-- ngIf: orderReady && !restrictedByShipTo -->
+                                   <!--   <button ng-if="orderReady &amp;&amp; !restrictedByShipTo" class="btn btn-primary ng-scope" type="button" ng-click="openPaymentForm()">
+                        Place Your Order
+                        <i class="fa fa-white fa-usd icon-right"></i>
+                    </button> -->
+                    <button class="btn btn-default" type="button" >
+                                        Continue Shopping
+                                        <i class="fa fa-white fa-tag icon-right"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <!--  <div class="row" ng-show="taxErrors.length &gt; 0">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="alert alert-danger">
+                                <strong>Errors:</strong>
+                                <ul>
+                                    <li ng-repeat="err in taxErrors" class="ng-binding ng-scope">Required parameter: city</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="inner-box ng-hide" ng-show="!items.length &amp;&amp; !purchasesPaid">
+                        <h2 class="cart-empty">Your Cart is Empty</h2>
+                        <div class="cart-empty-content">
+                            <button type="button" class="btn btn-default" ng-click="$state.go(&#39;root.common.products&#39;)">
+                                Continue Shopping
+                                <i class="fa fa-white fa-tag icon-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="inner-box ng-hide" ng-show="purchasesPaid">
+                        <h2 class="payment-confirmed">Thank you!</h2>
+                        <div class="payment-confirmed-content">
+                            <p class="ng-binding">Confirmation has been emailed to adrian.dalimonte@risevision.com. You can view the related transaction details on your <a ui-sref="root.common.account" target="_blank" href="https://store.risevision.com/account">Account</a> page.
+                            </p>
+                            <button type="button" class="btn btn-default" ng-click="$state.go(&#39;root.common.products&#39;)">
+                                Continue Shopping
+                                <i class="fa fa-white fa-tag icon-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script type="text/javascript" src="client.js" gapi_processed="true"></script>
+
+   
+</body>
+
+</html>
