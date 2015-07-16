@@ -7,6 +7,7 @@ var MockupsApp = angular.module('MockupsApp', [
   'ngTouch',
   'ui.router',
   'ui.bootstrap',
+  'sticky',
   'MockupsApp.directives'
 ]);
 
@@ -60,6 +61,17 @@ MockupsApp.controller('MockupsAppController', function ($scope, $modal, $log) {
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
   };
+
+   //$scope.navs = [{
+    //    url: 'index.html',
+    //    label: 'Overview'
+    //  },{
+   //     url: 'inspired.html',
+  //      label: 'Get Inspired'
+  //    }, {
+  //      url: 'webcomp.html',
+  //      label: 'Web Components'
+  //    }];
 
 
 });

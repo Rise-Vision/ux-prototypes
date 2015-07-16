@@ -78,6 +78,16 @@ span.ellipsis {
   transform: translateY(-50%);
 }
 
+.radio-vertical-align {
+  display: inline-block;
+}
+		
+.radio-vertical-align input,
+.radio-vertical-align label {
+  display: inline-block;
+  vertical-align: middle;	
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -99,6 +109,12 @@ svg {
 .app-navigation path:last-child {
   fill:#2D60AD;
 }
+
+.file-empty-state path {
+  fill:#969595;
+  opacity: .65;
+}
+
 
 svg:hover path {
   fill: rgba(0,0,0,.7);

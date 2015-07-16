@@ -1,0 +1,37 @@
+<div style="height:1px;"></div>
+<nav class="navbar navbar-default navbar-website" style="z-index:1000" sticky sticky-class="isSticky">
+  <div class="container">
+    <div class="navbar-header" style="width: 100%">
+      <div class="pull-right">
+        <a href="/signup" class="btn btn-lg btn-primary">Sign Up Free <i class="fa fa-google"></i></a>
+        <a href="/signup" class="btn btn-lg btn-link">Sign In</a>
+      </div><!--pull-right-->
+
+      <a href="index.html" class="navbar-brand hidden-xs">
+        <img src="img/logo.svg" class="img-responsive">
+      </a>
+
+      <div class="navbar-collapse navbar-left">
+        <button ng-init="isCollapsed = true" class="btn btn-lg btn-default visible-xs" ng-click="isCollapsed = !isCollapsed"><i class="fa fa-bars"></i></button>
+        <ul class="nav navbar-nav hidden-xs">
+          <li ng-repeat="nav in navs">
+            <a href="{{nav.url}}">{{nav.label}}</a>
+          </li>
+        </ul>
+      </div>
+    </div><!--navbar-header-->    
+  </div>
+  
+  <div class="collapsed-nav animated fadeIn half-top half-bottom hidden-lg hidden-md hidden-sm" collapse="isCollapsed">
+    <ul class="nav nav-pills nav-stacked">
+      <li>
+        <a href="/">Home</a>
+      </li>    
+      <li ng-repeat="nav in navs">
+        <a href="{{nav.url}}">{{nav.label}}</a>
+      </li>
+    </ul>
+  </div>
+  
+</nav>
+

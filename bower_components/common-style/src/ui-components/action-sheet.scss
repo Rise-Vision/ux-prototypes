@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   max-height: 75%;
-  background-color: #fff;
+  background-color: #FFF;
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -32,6 +32,7 @@
 
   ul {
     padding: 0;
+    margin: 0;
   }
 
   &.is-action-sheet-closed {
@@ -41,25 +42,24 @@
   .menu-box {
     width: 50%;
   }
-
   li {
     list-style: none;
     display: list-item;
     margin: 0;
     padding: 0 15px;
-
     &.system-message {
       padding-bottom: 10px !important;
     }
-
     &:active { background-color: $gray-lighter; }
-
     a.action {
       display: block;
       height: 40px !important;
       line-height: 40px !important;
       color: $text-color !important;
     }
+  }
+  .dropdown-header, .dropdown-footer {
+    padding: 15px;
   }
 }
 

@@ -51,27 +51,3 @@
   }
 }
 
-.selector-header {
-  padding: 0 15px 15px;
-  p {
-    line-height: 20px;
-    margin: 0;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: middle;
-    &:first-child {display:block;}
-  }
-  @media (max-width: 768px) {
-    .icon-nav {
-      .btn {margin-left: -4px;}
-    }
-    .store-status-2 {
-      vertical-align: top;
-      display: block;
-      margin: 10px 0 0 0;
-      .btn {float: right;}
-    }
-  }
-}

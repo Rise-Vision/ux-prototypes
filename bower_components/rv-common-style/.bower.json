@@ -1,5 +1,6 @@
 {
   "name": "rv-common-style",
+  "version": "1.2.8",
   "license": "MIT",
   "private": false,
   "ignore": [
@@ -21,13 +22,13 @@
     "rv-common-style": "git://github.com/Rise-Vision/common-style"
   },
   "homepage": "https://github.com/Rise-Vision/common-style",
-  "_release": "32ff935e7f",
+  "_release": "1.2.8",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "32ff935e7f6ba9f3307011135f5290f6073bb40d"
+    "type": "version",
+    "tag": "v1.2.8",
+    "commit": "d9d347f4deee519c23fe3aa8cc8b34459f45afad"
   },
-  "_source": "git://github.com/Rise-Vision/common-style.git",
-  "_target": "master",
-  "_originalSource": "git://github.com/Rise-Vision/common-style"
+  "_source": "https://github.com/Rise-Vision/common-style.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/Rise-Vision/common-style.git"
 }

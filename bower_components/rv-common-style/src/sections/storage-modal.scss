@@ -1,20 +1,12 @@
 .storage-modal {
-  padding-bottom: 50px;
-  &.modal-content {
-    padding-bottom: 0;
+  padding:  15px;
+  .scrollable-list {
+    max-height: calc(100vh - 140px);
   }
-  /* ==========================================================================
-     General Styles
-     ========================================================================== */
-  ul {
-    /* Display & Box Model */
-    padding: 0;
-    /* Visual */
-    list-style: none;
+  h3 {
+    margin-top: 0;
   }
-
-
-.table-2 {
+  .table-2 {
   > tbody > tr > td {
     strong {font-weight: 500}
     .fa {font-size: 20px; line-height: 20px; vertical-align: top;}
@@ -59,6 +51,29 @@ tr.blocked-file {
     }
   }
 
+.icon-nav {
+  padding-bottom: 1px;
+}
+
+.selector-header {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  p {
+    line-height: 16px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    &:first-child {display:block;}
+  }
+  @media (max-width: 768px) {
+    .icon-nav {
+      .btn {margin-left: -4px;}
+    }
+  }
+}
 
   /* ==========================================================================
      Buttons
@@ -199,13 +214,7 @@ tr.blocked-file {
   }
 }
 
-/* Icon Colors */
-.fa.icon-gray:before {
-  color: #BBB;
-}
-.fa.icon-red:before {
-  color: #cf371f;
-}
+
 
 tr.blocked-file {
   position: relative;
@@ -217,58 +226,5 @@ tr.blocked-file {
       top:35px;
       left: 10px;
     }
-  }
-}
-
-.callout {
-  padding: 15px;
-  border-radius: 3px;
-  width: 100%;
-  z-index: 8000;
-  position: absolute;
-  left: 0;
-  color: #444;
-  opacity: .9;
-  -webkit-box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.75);
-  box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.75);
-  a {color: $rise-blue !important;}
-  &.callout-green {
-    background: #e3f7e8;
-    border:1px solid #47b767;
-    .arrow:before {border-bottom: 10px solid #e3f7e8;}
-    .arrow:after {border-bottom: 12px solid #47b767;}
-  }
-  &.callout-red {
-    background: #ffece8;
-    border:1px solid red;
-    .arrow:before {border-bottom: 10px solid #ffece8;}
-    .arrow:after {border-bottom: 12px solid #cf371f;}
-  }
-  .arrow {
-    width: 40px;
-    position: absolute;
-    display: block;
-    top: 0;
-  }
-  .arrow:before {
-    position:absolute;
-    top:-10px; right:10px;
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    z-index:2;
-  }
-  .arrow:after {
-    position:absolute;
-    top:-12px; right:8px;
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    z-index:1;
   }
 }
