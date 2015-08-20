@@ -10,6 +10,24 @@ msgstr "Continue To App"
 msgid "error"
 msgstr "Error"
 
+msgid "expanded-cancelled"
+msgstr "Your subscription was cancelled"
+
+msgid "expanded-expired"
+msgstr "Your trial has expired"
+
+msgid "expanded-on-trial"
+msgstr "{{expiry}} day remaining on your trial"
+
+msgid "expanded-on-trial-many"
+msgstr "{{expiry}} days remaining on your trial"
+
+msgid "expanded-on-trial-zero"
+msgstr "{{expiry}} days remaining on your trial"
+
+msgid "expanded-suspended"
+msgstr "Your account is suspended"
+
 msgid "expires-in"
 msgstr "Expiring in {{days}} Days"
 
@@ -49,6 +67,9 @@ msgstr "Start Trial"
 msgid "subscribe"
 msgstr "Subscribe"
 
+msgid "subscribe-now"
+msgstr "Subscribe Now!"
+
 msgid "subscribed"
 msgstr "Subscribed"
 
@@ -63,4 +84,7 @@ msgstr "Trial Expired"
 
 msgid "view-account"
 msgstr "View Account"
+
+msgid "view-invoices"
+msgstr "View Invoices"
 

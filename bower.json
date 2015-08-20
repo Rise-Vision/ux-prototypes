@@ -1,4 +1,5 @@
 {
+  
   "name": "ux-mockups",
   "version": "0.1.0",
   "license": "MIT",
@@ -11,8 +12,10 @@
     "tests",
     "www"
   ],
-  "dependencies": {
-    "rv-common-style": "git://github.com/Rise-Vision/common-style#master",
+  "dependencies": { 
+    "ng-sticky": "https://github.com/d-oliveros/ngSticky.git",
+    "rv-common-svg": "https://github.com/Rise-Vision/common-svg.git",
+    "rv-common-style": "https://github.com/Rise-Vision/common-style.git",
     "angular-bootstrap": "~0.11.0",
     "widget-settings-ui-components": "git://github.com/Rise-Vision/widget-settings-ui-components"
   },
@@ -22,29 +25,6 @@
     "jquery": "1.11.0",
     "angular-bootstrap": "~0.11.0",
     "rv-common-style": "master"
-  },
-  "widget-settings-ui-components": {
-    "main": [
-      "demos/*.html",
-      "dist/js/alignment.js",
-      "dist/js/angular/alignment.js",
-      "dist/js/angular/color-picker.js",
-      "dist/js/angular/font-setting.js",
-      "dist/js/angular/column-setting.js",
-      "dist/js/angular/column-selector.js",
-      "dist/js/angular/tooltip.js",
-      "dist/js/angular/scroll-setting.js",
-      "dist/js/angular/table-setting.js",
-      "dist/js/font-style.min.js",
-      "dist/js/angular/font-style.min.js",
-      "dist/js/angular/url-field.js",
-      "dist/js/url-field.js",
-      "dist/js/angular/background-setting.js",
-      "dist/js/angular/widget-button-toolbar.js",
-      "dist/js/angular/video-setting.js",
-      "dist/js/angular/position-setting.js",
-      "dist/js/angular/background-image-setting.js",
-      "dist/js/angular/order.js"
-    ]
   }
+ 
 }

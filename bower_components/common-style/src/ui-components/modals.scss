@@ -40,20 +40,22 @@
   background: #fcfcfc;
 }
 
+.close {
+  font-size: 16px;
+  margin-top: 0px;
+}
+
 .modal-header {
   margin-bottom: 0;
   background: $lighter-gray;
   border-radius: 4px 4px 0 0;
   .close {
-    font-size: 16px;
     padding: 15px;
-    margin-top: 0px;
   }
 }
 
 .modal-title {
   font-weight: 500;
-  font-size: 16px;
   padding:15px;
 }
 
@@ -108,39 +110,6 @@
   }
 }
 
-/* Modal scrollable list
-   ========================================================================== */
-.scrollable-list {
-  overflow: auto;
-  overflow-y: scrollable;
-  cursor: pointer;
-  max-height: 400px;
-}
-
-.scrollable-list::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-.scrollable-list::-webkit-scrollbar:vertical {
-    width: 11px;
-}
-
-.scrollable-list::-webkit-scrollbar:horizontal {
-    height: 11px;
-}
-
-.scrollable-list::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white; /* should match background, can't be transparent */
-    background-color: rgba(0, 0, 0, .5);
-}
-
-.scrollable-list::-webkit-scrollbar-track { 
-    background-color: #fff; 
-    border-radius: 8px; 
-} 
-
-
 /* Media queries
    ========================================================================== */
 @media (max-width: $screen-xs) {
@@ -156,5 +125,4 @@
       width: 96px;
     }
   }
-
 }

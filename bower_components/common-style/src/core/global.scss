@@ -9,15 +9,15 @@
 /* ==========================================================================
    Standard tags
    ========================================================================== */
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
 html,
 body {
-  /* Display & Box Model */
-  height: 100%;
-
-  /* Fir off Canvas Menu */
-  overflow-x: hidden;
-
-  /* Visual */
   background: $brand-bg;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -31,7 +31,6 @@ body {
 * https://github.com/twbs/bootstrap/issues/9855   
 */    
 html {   
-  overflow: hidden;    
   -ms-overflow-style: scrollbar;   
 }    
    
