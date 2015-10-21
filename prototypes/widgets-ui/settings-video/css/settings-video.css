@@ -1,0 +1,27 @@
+/** Volume **/
+.slider-selection{
+  left: 0%; 
+  width: 50%;
+}
+
+.round {
+  left: 50%;
+}
+
+/* Storage Status */
+.green-text {
+  color:#4ab767;
+}
+
+.red-text {
+  color: #D9534F;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.selected-storage-item {
+  color:$dark-gray;
+  max-width: 300px;
+}
