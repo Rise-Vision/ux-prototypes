@@ -1,0 +1,54 @@
+
+/** Volume **/
+.slider-selection{
+  left: 0%; width: 50%;
+}
+
+.round {
+  left: 50%;
+}
+
+
+
+/** Store Status**/
+.store-status-text {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+.store-status-box {
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  height:50px;
+  top:0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width:100%;
+  text-align: center;
+}
+
+.green-border {
+  border-color: #4ab767;
+}
+
+.green-text {
+  color:#4ab767;
+}
+
+.red-border {
+  border-color: #D9534F;
+}
+
+.red-text {
+  color: #D9534F;
+}
+
+.subscribe-now {
+  color:white;
+}
+
+.subscribe-now:hover {
+  color:white;
+}
