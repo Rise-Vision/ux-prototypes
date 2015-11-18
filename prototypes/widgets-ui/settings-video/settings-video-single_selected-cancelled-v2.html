@@ -58,52 +58,55 @@
 
 	<!-- Start Modal Body-->
 	 <div class="modal-body">
-       <!--Store Status-->
-        <!--<div class="store-status-box red-border">
-          <span class="store-status-text red-text">Your Rise Storage subscription is suspended
-          <button type="button" class="btn btn-primary add-left">
-            <a href="settings-video-url-invalid_storage-cancelled.html"><span class="btn-subscribe-now">Subscribe Now!</span></a>
-          </button>
-          </span> 
-        </div>--><!-- END Store Status-->
-
 		<!-- Specify Video-->
 		<div class="form-group">
-		  <label class="control-label remove-bottom add-top">How do you want to show your video(s)?</label>
-          <div class="row">	 
-            <div class="radio">
+		 <label class="control-label remove-bottomp">How do you want to show your video(s)?</label>
+          <div class="row half-top half-bottom">	 
                 <div class="col-md-12">
-                  <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" value="1" checked onclick="document.location='settings-video-single_default.html';"> Single Video in Rise Storage
-                  </label>
+                  <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='settings-video-single-default_inapp-v2.html';">Single Video
+                    <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+                  </button>              
+                  <button type="button" class="btn btn-default disabled">Folder of Video(s)
+                    <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+                  </button>   
+                  <button type="button" class="btn btn-default disabled">Custom URL
+                    <i class="fa fa-link fa-large"></i>
+                  </button>
                 </div>
-                <div class="col-md-12">
-                    <label class="radio-inline add-top">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-folder_default.html';" /> Folder of Video(s) in Rise Storage
-                  </label>
-                </div>
-              <div class="col-md-12">
-                    <label class="radio-inline add-top half-bottom">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-url_default.html';" checked> Custom URL
-                  </label>
-                </div>
-            </div>
           </div>
-          <input name="url" type="null" class="form-control" placeholder="Enter a valid URL to a MP4 or WebM video" onclick="document.location='settings-video-url_invalid.html';">
-			<!--<p ng-if="!valid &amp;&amp; invalidType === 'url'" class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>-->
+          <div class="form-group">
+          <div class="input-group">
+              <input type="text" class="form-control" value="my-videos/big-buck-bunny_trailer.webm" readonly="" >
+              <span class="input-group-addon clear-file clickable" onclick="document.location='settings-video-single_default-v2.html';">
+                  <i class="fa fa-times"></i>
+              </span>
+            <span class="input-group-addon add-left preview-file">
+              <a href="http://video.webmfiles.org/big-buck-bunny_trailer.webm" target="blank"><button class="btn btn-default">Preview File<img src="img/newtab-icon.png" class="storage-selector-icon icon-right"></button></a>
+            </span>
+          </div>
+          </div>
+          <div class="subscription-status cancelled storage-status" >
+          <span>This content is in a cancelled Rise Storage Account 
+            <button type="button" class="btn btn-primary add-left" onclick="document.location='settings-video-single_selected-suspended-v2.html';">
+                <span>Subscribe Now!</span>
+            </button>
+          </span>
+        </div>
 	   </div><!-- END Specify Video-->
+
        
        <!-- Pause Resume -->
        <div class="row add-top">
-       <div class="col-md-4" ng-show="scroll.by != 'none'">
-        <div class="form-group half-top">
+        <div class="col-md-4" ng-show="scroll.by != 'none'">
+        <div class="form-group">
           <label class="control-label ng-binding">If video is paused resume playing after:</label>
           <div class="input-group">
-            <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="5">
+            <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="30">
             <span class="input-group-addon ng-binding">sec</span>
+            
           </div>
         </div>
-      </div>
+        </div>
        </div><!-- END Pause Resume-->
 
        <!-- Volume -->
@@ -150,14 +153,14 @@
 	<!--Modal Footer-->
 	<div class="modal-footer">
     <div class="pull-right">
-      <button type="button" class="btn btn-primary btn-fixed-width" ng-click="save()" ng-disabled="forms.companyForm.$invalid">Save
+      <button type="button" class="btn btn-primary btn-fixed-width">Save
         <i class="fa fa-white fa-check icon-right"></i>
       </button>
-      <button type="button" class="btn btn-default btn-fixed-width close-company-settings-button" data-dismiss="modal" ng-click="closeModal()">Cancel
+      <button type="button" class="btn btn-default btn-fixed-width close-company-settings-button">Cancel
         <i class="fa fa-white fa-times icon-right"></i>
       </button>
     </div>
-  </div><!-- End Modal Footer-->
+    </div><!-- End Modal Footer-->
 		
 	</div><!-- End Modal Content-->
 	</div><!-- End Modal -->

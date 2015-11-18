@@ -58,10 +58,19 @@
 
 	<!-- Start Modal Body-->
 	 <div class="modal-body">
+       <!--Store Status-->
+        <!--<div class="store-status-box red-border">
+          <span class="store-status-text text-danger">Your Rise Storage subscription is suspended
+          <button type="button" class="btn btn-primary add-left">
+            <a href="settings-video-url-invalid_storage-cancelled.html"><span class="btn-subscribe-now">Subscribe Now!</span></a>
+          </button>
+          </span> 
+        </div>--><!-- END Store Status-->
+
 		<!-- Specify Video-->
 		<div class="form-group">
-		 <label class="control-label remove-bottom add-top">How do you want to show your video(s)?</label>
-           <div class="row">	 
+		  <label class="control-label remove-bottom add-top">How do you want to show your video(s)?</label>
+          <div class="row">	 
             <div class="radio">
                 <div class="col-md-12">
                   <label class="radio-inline">
@@ -75,39 +84,26 @@
                 </div>
               <div class="col-md-12">
                     <label class="radio-inline add-top half-bottom">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-url_default.html';"> Custom URL
+                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-url_default.html';" checked> Custom URL
                   </label>
                 </div>
             </div>
           </div>
-          <div class="input-group input-group-size half-top">
-            <div class="content-box-editable half-bottom small-top clickable">
-              <div class="add-left">
-                <a class="selected-storage-item" href="x"><img src="img/storage-image.png" class="storage-selector-icon add-right"><span class="ellipsis">my-videos/big-buck-bunny_trailer.webm</span></a>
-                <a class="add-left" href="http://video.webmfiles.org/big-buck-bunny_trailer.webm" target="blank">Preview File</a>
-              </div>	  
-            </div>      
-          </div>	
-          <span class="storage-status green-text">This content has 29 days remaining on Rise Storage Trial
-            <button type="button" class="btn btn-primary add-left">
-              <a href="settings-video-single_selected-expired.html">
-                <span class="white-text">Subscribe Now!</span>
-              </a>
-            </button>
-          </span> 
+          <input name="url" type="null" class="form-control" placeholder="Enter a valid URL to a MP4 or WebM video" onclick="document.location='settings-video-url_invalid.html';">
+			<!--<p ng-if="!valid &amp;&amp; invalidType === 'url'" class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>-->
 	   </div><!-- END Specify Video-->
        
        <!-- Pause Resume -->
        <div class="row add-top">
-        <div class="col-md-4" ng-show="scroll.by != 'none'">
-        <div class="form-group">
+       <div class="col-md-4" ng-show="scroll.by != 'none'">
+        <div class="form-group half-top">
           <label class="control-label ng-binding">If video is paused resume playing after:</label>
           <div class="input-group">
             <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="5">
             <span class="input-group-addon ng-binding">sec</span>
           </div>
         </div>
-        </div>
+      </div>
        </div><!-- END Pause Resume-->
 
        <!-- Volume -->
@@ -161,7 +157,7 @@
         <i class="fa fa-white fa-times icon-right"></i>
       </button>
     </div>
-    </div><!-- End Modal Footer-->
+  </div><!-- End Modal Footer-->
 		
 	</div><!-- End Modal Content-->
 	</div><!-- End Modal -->

@@ -60,51 +60,48 @@
 	 <div class="modal-body">
 		<!-- Specify Video-->
 		<div class="form-group">
-		 <label class="control-label remove-bottom add-top">How do you want to show your video(s)?</label>
-           <div class="row">	 
-            <div class="radio">
+		 <label class="control-label remove-bottomp">How do you want to show your video(s)?</label>
+          <div class="row half-top half-bottom">	 
+            
                 <div class="col-md-12">
-                  <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" value="1" checked onclick="document.location='settings-video-single_default.html';"> Single Video in Rise Storage
-                  </label>
+                  <button type="button" class="btn btn-default btn-fixed-width" disabled onclick="document.location='settings-video-single_default.html';">Single Video
+        <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+      </button>
+              
+                
+                    <button type="button" class="btn btn-default  disabled" onclick="document.location='settings-video-folder-default_inapp-v2.html';">Folder of Video(s)
+        <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+      </button>
+                  
+                
+                    <button type="button" class="btn btn-default">Custom URL
+        <i class="fa fa-link fa-large"></i>
+      </button>
                 </div>
-                <div class="col-md-12">
-                    <label class="radio-inline add-top">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-folder_default.html';" /> Folder of Video(s) in Rise Storage
-                  </label>
-                </div>
-              <div class="col-md-12">
-                    <label class="radio-inline add-top half-bottom">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-url_default.html';"> Custom URL
-                  </label>
-                </div>
-            </div>
+            
           </div>
-          <div class="input-group input-group-size">
-            <div class="content-box-editable half-bottom small-top clickable">
-              <div class="add-left">
-                <a class="selected-storage-item" href="settings-video-single-default_inapp.html"><img src="img/storage-image.png" class="storage-selector-icon add-right"><span class="ellipsis">my-videos/big-buck-bunny_trailer.webm</span></a>
-                <a class="add-left" href="http://video.webmfiles.org/big-buck-bunny_trailer.webm" target="blank">Preview File</a>
-              </div>	  
-            </div>      
-          </div>		
-          <span class="storage-status red-text">This content is in a cancelled Rise Storage Account 
-            <button type="button" class="btn add-left btn-primary">
-              <a href="settings-video-single_selected-suspended.html">
-              <span class="white-text">Subscribe Now!</span>
-              </a>
-            </button>
-          </span> 
+          <div class="form-group">
+    <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" value="Enter a valid URL to a MP4 or WebM video" onclick="document.location='settings-video-url_invalid-v2.html';">
+            <span class="input-group-addon clear-file clickable" onclick="document.location='settings-video-single_default-v2.html';">
+            <i class="fa fa-times"></i>
+            </span>
+          </div>
+        </div>
+
 	   </div><!-- END Specify Video-->
+
        
        <!-- Pause Resume -->
        <div class="row add-top">
-        <div class="col-md-4" ng-show="scroll.by != 'none'">
+        <div class="col-md-4">
         <div class="form-group">
           <label class="control-label ng-binding">If video is paused resume playing after:</label>
           <div class="input-group">
-            <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="5">
+            <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="30">
             <span class="input-group-addon ng-binding">sec</span>
+            
           </div>
         </div>
         </div>

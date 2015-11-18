@@ -24,9 +24,7 @@
     <script type="text/javascript" src="../../../bower_components/bootstrap-form-components/dist/js/angular/bootstrap-font-picker.js"></script>
     <!-- app js -->	 
     <script src="../../../js/app.js"></script>
-	<style>
-      
-    </style>
+	
   </head>
 
   <body>
@@ -60,47 +58,29 @@
 	 <div class="modal-body">
 		<!-- Specify Video-->
 		<div class="form-group">
-		 <label class="control-label remove-bottom add-top">How do you want to show your video(s)?</label>
-           <div class="row">	 
-            <div class="radio">
-                <div class="col-md-12">
-                  <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" value="1" checked onclick="document.location='settings-video-single_default.html';"> Single Video in Rise Storage
-                  </label>
-                </div>
-                <div class="col-md-12">
-                    <label class="radio-inline add-top">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-folder_default.html';" checked/> Folder of Video(s) in Rise Storage
-                  </label>
-                </div>
-              <div class="col-md-12">
-                    <label class="radio-inline add-top half-bottom">
-                    <input type="radio" name="inlineRadioOptions" value="0" onclick="document.location='settings-video-url_default.html';"> Custom URL
-                  </label>
-                </div>
+		  <label class="control-label remove-bottom">How do you want to show your video(s)?</label>
+          <div class="row half-top add-bottom">	 
+            <div class="col-md-12">
+              <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='settings-video-single-default_inapp-v2.html';">Single Video
+                <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+              </button>
+              <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='settings-video-folder-default_inapp-v2.html';">Folder of Video(s)
+                <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+              </button>
+              <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='settings-video-url_default-v2.html';">Custom URL
+                <i class="fa fa-link fa-large"></i>
+              </button>
             </div>
           </div>
-         <div class="input-group input-group-size">
-            <div class="content-box-editable half-bottom small-top clickable">
-              <div class="add-left">
-                <a class="selected-storage-item" href="settings-video-folder-default_inapp.html"><img src="img/storage-image.png" class="storage-selector-icon add-right"><span class="ellipsis">my-videos/car-videos</span></a>
-              </div>	  
-            </div>      
-          </div>	
-          <span class="storage-status green-text">This content has 29 days remaining on Rise Storage Trial <button type="button" class="btn add-left btn-primary">
-          <a href="settings-video-single_selected-expired.html">
-            <span class="white-text">Subscribe Now!</span>
-          </a>
-        </button></span> 
-	   </div><!-- END Specify Video-->
+       </div><!-- END Specify Video-->
        
        <!-- Pause Resume -->
-       <div class="row add-top">
-       <div class="col-md-4" ng-show="scroll.by != 'none'">
+       <div class="row">
+       <div class="col-md-4">
         <div class="form-group">
-          <label class="control-label ng-binding">If video is paused resume playing after:</label>
+          <label class="control-label add-top">If video is paused resume playing after:</label>
           <div class="input-group">
-            <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="5">
+            <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number" placeholder="30">
             <span class="input-group-addon ng-binding">sec</span>
           </div>
         </div>
@@ -147,14 +127,14 @@
       </div><!-- End Video Options -->
       <hr/>
 	</div><!-- End Modal Body-->
-		
+
 	<!--Modal Footer-->
 	<div class="modal-footer">
     <div class="pull-right">
-      <button type="button" class="btn btn-primary btn-fixed-width" ng-click="save()" ng-disabled="forms.companyForm.$invalid">Save
+      <button type="button" class="btn btn-primary btn-fixed-width">Save
         <i class="fa fa-white fa-check icon-right"></i>
       </button>
-      <button type="button" class="btn btn-default btn-fixed-width close-company-settings-button" data-dismiss="modal" ng-click="closeModal()">Cancel
+      <button type="button" class="btn btn-default btn-fixed-width">Cancel
         <i class="fa fa-white fa-times icon-right"></i>
       </button>
     </div>
