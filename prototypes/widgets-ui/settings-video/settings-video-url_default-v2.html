@@ -42,7 +42,7 @@
 	<div class="container-fluid">
     <div class="modal-dialog modal-lg">
 	<!-- MODAL-->
-	<div class="modal-content">
+	<div class="modal-content scrollable-list">
 			
 	<!-- Start Modal Header-->
     <div class="modal-header">
@@ -64,33 +64,21 @@
           <div class="row half-top half-bottom">	 
             
                 <div class="col-md-12">
-                  <button type="button" class="btn btn-default btn-fixed-width" disabled onclick="document.location='settings-video-single_default.html';">Single Video
-        <img src="img/storage-image.png" class="storage-selector-icon icon-right">
-      </button>
-              
-                
-                    <button type="button" class="btn btn-default  disabled" onclick="document.location='settings-video-folder-default_inapp-v2.html';">Folder of Video(s)
-        <img src="img/storage-image.png" class="storage-selector-icon icon-right">
-      </button>
-                  
-                
-                    <button type="button" class="btn btn-default">Custom URL
-        <i class="fa fa-link fa-large"></i>
-      </button>
+                  <button type="button" class="btn btn-default btn-fixed-width"  onclick="document.location='settings-video-single-default_inapp-v2.html';">Single Video
+                <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+              </button>
+              <button type="button" class="btn btn-default" onclick="document.location='settings-video-folder-default_inapp-v2.html';">Folder of Video(s)
+                <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+              </button>
+              <button type="button" class="btn btn-default active" onclick="document.location='settings-video-url_default-v2.html';">Custom URL
+                <i class="fa fa-link fa-large"></i>
+              </button>
                 </div>
-            
           </div>
-          <div class="form-group">
-    <div class="form-group">
-          <div class="input-group">
-            <input type="text" class="form-control" value="Enter a valid URL to a MP4 or WebM video" onclick="document.location='settings-video-url_invalid-v2.html';">
-            <span class="input-group-addon clear-file clickable" onclick="document.location='settings-video-single_default-v2.html';">
-            <i class="fa fa-times"></i>
-            </span>
-          </div>
-        </div>
-
-	   </div><!-- END Specify Video-->
+          
+          <input type="text" class="form-control" value="Enter a valid URL to a MP4 or WebM video" onclick="document.location='settings-video-url_invalid-v2.html';">
+          
+<!-- END Specify Video-->
 
        
        <!-- Pause Resume -->

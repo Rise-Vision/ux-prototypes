@@ -42,7 +42,7 @@
 	<div class="container-fluid">
     <div class="modal-dialog modal-lg">
 	<!-- MODAL-->
-	<div class="modal-content">
+	<div class="modal-content scrollable-list">
 			
 	<!-- Start Modal Header-->
     <div class="modal-header">
@@ -60,27 +60,24 @@
 	 <div class="modal-body">
 		<!-- Specify Video-->
 		<div class="form-group">
-		 <label class="control-label remove-bottomp">How do you want to show your video(s)?</label>
+		 <label class="control-label remove-bottom">How do you want to show your video(s)?</label>
           <div class="row half-top half-bottom">	 
                 <div class="col-md-12">
-                  <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='settings-video-single-default_inapp-v2.html';">Single Video
-                    <img src="img/storage-image.png" class="storage-selector-icon icon-right">
-                  </button>              
-                  <button type="button" class="btn btn-default disabled">Folder of Video(s)
-                    <img src="img/storage-image.png" class="storage-selector-icon icon-right">
-                  </button>   
-                  <button type="button" class="btn btn-default disabled">Custom URL
-                    <i class="fa fa-link fa-large"></i>
-                  </button>
+                  <button type="button" class="btn btn-default btn-fixed-width  active"  onclick="document.location='settings-video-single-default_inapp-v2.html';">Single Video
+                <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+              </button>
+              <button type="button" class="btn btn-default" onclick="document.location='settings-video-folder-default_inapp-v2.html';">Folder of Video(s)
+                <img src="img/storage-image.png" class="storage-selector-icon icon-right">
+              </button>
+              <button type="button" class="btn btn-default" onclick="document.location='settings-video-url_default-v2.html';">Custom URL
+                <i class="fa fa-link fa-large"></i>
+              </button>
                 </div>
           </div>
           <div class="form-group">
-          <div class="input-group">
+          <div class="input-group custom-addon" >
               <input type="text" class="form-control" value="my-videos/big-buck-bunny_trailer.webm" readonly="" >
-              <span class="input-group-addon clear-file clickable" onclick="document.location='settings-video-single_default-v2.html';">
-                  <i class="fa fa-times"></i>
-              </span>
-            <span class="input-group-addon add-left preview-file">
+            <span class="input-group-addon" style="padding-right:0;">
               <a href="http://video.webmfiles.org/big-buck-bunny_trailer.webm" target="blank"><button class="btn btn-default">Preview File<img src="img/newtab-icon.png" class="storage-selector-icon icon-right"></button></a>
             </span>
           </div>
