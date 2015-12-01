@@ -1,0 +1,19 @@
+/** Volume **/
+.slider-selection{
+  left: 0%; 
+  width: 50%;
+}
+
+.round {
+  left: 50%;
+}
+
+
+.scroll-wrapper {
+  height: 100%;
+}
+
+.scroll-content {
+  height: 95%;
+  overflow: auto;
+}
