@@ -30,13 +30,7 @@
   </head>
 
   <body>
-	<!-- Header Nav -->
-	<div ng-init="navs = [{
-	url:'menu.html',
-	label:'Menu Item'
-	}]">
-	</div>
-
+	
 	<!-- Main View -->
     <div ng-include="'../../../partials/common-header.html'" scope="" onload=""></div>
 	<div class="container-fluid">
@@ -64,10 +58,10 @@
           <div class="row half-top half-bottom">	 
             
                 <div class="col-md-12">
-                  <button type="button" class="btn btn-default btn-fixed-width"  onclick="document.location='settings-image-single-default_inapp-v2.html';">Single Image
+                  <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='in-app-storage_single-stage1.html';">Single Image
                 <img src="img/storage-image.png" class="storage-selector-icon icon-right">
               </button>
-              <button type="button" class="btn btn-default" onclick="document.location='settings-image-folder-default_inapp-v2.html';">Folder of Image(s)
+              <button type="button" class="btn btn-default btn-fixed-width" onclick="document.location='in-app-storage_folder-stage1.html';">Folder of Image(s)
                 <img src="img/storage-image.png" class="storage-selector-icon icon-right">
               </button>
               <button type="button" class="btn btn-default active" onclick="document.location='settings-image-url_default-v2.html';">Custom URL
@@ -76,7 +70,7 @@
                 </div>
           </div>
           
-          <input type="text" class="form-control" value="Enter a valid URL to a MP4 or WebM video" onclick="document.location='settings-image-url_invalid-v2.html';">
+          <input type="text" class="form-control" value="Enter a valid URL to an Image" onclick="document.location='settings-image-url_invalid-v2.html';">
           
 </div><!-- END Specify Video-->
 <!-- Scale to Fit-->

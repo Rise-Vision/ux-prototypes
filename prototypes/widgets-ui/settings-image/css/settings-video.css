@@ -17,3 +17,21 @@
   height: 95%;
   overflow: auto;
 }
+
+/** In App Storage **/
+.grey {
+  color: #ccc;
+}
+
+.green {
+  color: #4ab767;
+}
+
+.unselectable {
+  opacity: .5;
+  cursor: not-allowed !important;
+}
+
+.selectable:hover {
+  background-color:#f5f5f5;
+ }
