@@ -9,7 +9,6 @@
 
     <!-- app css -->
     <link href="../../../bower_components/rv-common-style/dist/css/rise.min.css" rel="stylesheet" type="text/css">
-    <link href="css/settings-video.css" rel="stylesheet" type="text/css">
 	  <link href="../../../bower_components/rv-bootstrap-formhelpers/dist/css/rv-bootstrap-formhelpers.css" rel="stylesheet" type="text/css">
 	  <link href="../../../bower_components/bootstrap-select/bootstrap-select.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -24,12 +23,35 @@
     <script type="text/javascript" src="../../bower_components/bootstrap-form-components/dist/js/angular/bootstrap-font-picker.js"></script>
     <!-- app js -->	 
     <script src="../../../js/app.js"></script>
-	<style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+     <script src="http://code.jquery.com/jquery-1.4.2.js"></script>
+ 
+        <script>
+$(document).ready(function(){
+$("p").hide();
+    $(document).ready(function(){
+    $("#slidetoggle").click(function(){
+        $("#slideDiv").slideToggle();
+    });
+});
+});
+</script>
+    <style>
+    #slideDiv {
+      text-align:center;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      display: none; 
+      width: 450px;
+    }
       
+    #slidetoggle {
+        line-height:20px;
+    }
     </style>
   </head>
-
   <body>
+	
 
 	<!-- Main View -->
     <div ng-include="'../../../partials/common-header.html'" scope="" onload=""></div>
@@ -39,61 +61,29 @@
 	<div class="modal-content scrollable-list">
 			
 	<!-- Start Modal Header-->
-    <div class="modal-header">
-      <button type="button" class="close">
-        <i class="fa fa-times half-top"></i>
-      </button>
-      <h2 class="modal-title">Time and Date Settings 
-        <button class="btn btn-link">
-          <i class="fa fa-github fa-2x icon-gray"></i>
-        </button>
-      </h2> 	
-    </div><!-- End Modal Header-->
+		<div class="modal-header">
+  <button type="button" class="close">
+    <i class="fa fa-times half-top"></i>
+  </button>
+  <h2 class="modal-title">RSS Settings <button class="btn btn-link">
+				<i class="fa fa-github fa-2x icon-gray"></i>
+			</button></h2> 
+			
+		</div>
+		
+	<!-- End Modal Header-->
 
 	<!-- Start Modal Body-->
 	 <div class="modal-body">
-		<!-- Specify Video-->
-       
-       
-       
-      <!-- Time-->
-        <div class="form-group">
-          <label class="ng-binding ng-scope">Time</label>
-          <div class="row">
-            <div class="col-md-2">
-				<input class="half-top half-bottom" type="checkbox" checked="checked"  onclick="document.location='settings-clock-disable-time.html';"> Show Time
-		    </div>
-          <div class="col-md-4">
-            <select name="position" class="form-control">
-              <option value="top-left" class="ng-binding" selected>12-Hour</option>
-              <option value="top-left" class="ng-binding" >24-Hour</option>        
-            </select>
-          </div>
-        </div>
-        </div>
-       
-       <!-- Date-->
-        <div class="form-group">
-          <label class="ng-binding ng-scope">Date</label>
-          <div class="row">
-            <div class="col-md-2">
-				<input class="half-top half-bottom" type="checkbox" checked="checked"  onclick="document.location='settings-clock-disable-date.html';"> Show Date
-		    </div>
-          <div class="col-md-4">
-            <select name="position" class="form-control">
-              <option value="top-center" class="ng-binding" selected>MMMM DD, YYYY</option>
-              <option value="top-center" class="ng-binding">MMM DD YYYY</option>
-              <option value="top-left" class="ng-binding">MM/DD/YYYY</option>
-              <option value="top-left" class="ng-binding">DD/MM/YYYY</option>        
-            </select>
-          </div>
-        </div>
-        </div>
-       
-       	<!--Heading Format-->			 
+
+		<!-- RSS URL-->
+
+    
+
+		<!--Heading Format-->			 
 		<div class="row">	 
-		<div class="col-md-12 half-top">
-			<label class="control-label">Font Style</label>
+		<div class="col-md-12">
+			<label class="control-label">Heading Style</label>
 			<ul class="list-inline font-setting" >
 				<!-- Font Family -->
 				<li class="pull-left">
@@ -102,7 +92,7 @@
 						<div class="bfh-selectbox">
 						<input class="font-family" type="hidden" value="Verdana">
 						<button type="button" class="btn btn-default btn-sm dropdown-toggle font-select-btn" data-toggle="bfh-selectbox">
-						<span class="bfh-selectbox-option">Arial</span>
+						<span class="bfh-selectbox-option">Verdana</span>
 						<span class="caret selectbox-caret"></span>
 						</button>
 						<div class="bfh-selectbox-options">
@@ -177,15 +167,7 @@
 						</alignment>
 					</li><!-- End Alignment -->
 				
-				<!--Bold Italic Underlined-->
-				<li class="font-setting-button">
-				<font-style bold="fontData.bold" italic="fontData.italic" underline="fontData.underline" class="ng-isolate-scope"><div class="btn-group">
-			<a class="btn btn-sm btn-default bold" data-wysihtml5-command="bold" title="CTRL+B" tabindex="-1">B</a>
-			<a class="btn btn-sm btn-default italic" data-wysihtml5-command="italic" title="CTRL+I" tabindex="-1">I</a>
-			<a class="btn btn-sm btn-default underline" data-wysihtml5-command="underline" title="CTRL+U" tabindex="-1">U</a>
-			</div>
-			</font-style>
-			  </li>
+				
 				
 				<!--Font Color-->
 				<li class="pull-left font-setting-button">
@@ -196,6 +178,27 @@
 				<li class="pull-left font-setting-button">
 				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer highlight-color-picker sp-light"><div class="sp-preview"><div class="sp-preview-inner" style="background-color: rgba(0, 0, 0, 0);"><img src="http://s3.amazonaws.com/rise-common-test/scripts/spectrum/images/text-highlight.png"></div></div><b class="caret"></b></div>
 			  </li>
+              <!--Bold Italic Underlined-->
+				<li class="pull-left font-setting-button">
+				<font-style bold="fontData.bold" italic="fontData.italic" underline="fontData.underline" class="ng-isolate-scope"><div class="btn-group">
+			<a class="btn btn-sm btn-default bold" data-wysihtml5-command="bold" title="CTRL+B" tabindex="-1">B</a>
+			<a class="btn btn-sm btn-default italic" data-wysihtml5-command="italic" title="CTRL+I" tabindex="-1">I</a>
+			<a class="btn btn-sm btn-default underline" data-wysihtml5-command="underline" title="CTRL+U" tabindex="-1">U</a>
+			</div>
+			</font-style>
+                  
+			  </li>
+				
+<!--Font Highlight-->
+		    <li class="pull-left font-setting-button">
+                  
+				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div  id="show" class="sp-replacer highlight-color-picker sp-light"><div id="slidetoggle" ><div class="sp-preview"><div class="sp-preview-inner">CSS</div></div><b class="caret"></b></div></div>
+                  <div>
+                  </div>
+                  <div id="slideDiv">
+                    <input name="url" type="null" class="form-control" value=".headline_font-style{font-family:Arial, Arial, Helvetica, sans-serif;color:rgb(0, 0, 0);font-weight:normal;font-size:48px;}" >
+                  </div>
+			  </li>
 			  
 			</ul>
 			</div>
@@ -203,30 +206,33 @@
 		<div class="row">
 			<div class="col-md-12">	 
 				<div class="font-picker-text form-group">
-				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;"> 1:30 PM August 5, 2015</span>
+				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Heading Style Sample Text</span>
 				</div>
 			 </div>
 		</div>
 		<!--End Story Format-->	
-       
-      <hr/>
-       <p class="half-top">This widget will show the current time and date according to the time and date configured on the operating system it is used on.</p>
+		<!--End Heading Format-->
+
+	
+		
 	</div><!-- End Modal Body-->
 		
 	<!--Modal Footer-->
 	<div class="modal-footer">
     <div class="pull-right">
-      <button type="button" class="btn btn-primary btn-fixed-width">Save
+      <button type="button" class="btn btn-primary btn-fixed-width" ng-click="save()" ng-disabled="forms.companyForm.$invalid">Save
         <i class="fa fa-white fa-check icon-right"></i>
       </button>
-      <button type="button" class="btn btn-default btn-fixed-width close-company-settings-button">Cancel
+      <button type="button" class="btn btn-default btn-fixed-width close-company-settings-button" data-dismiss="modal" ng-click="closeModal()">Cancel
         <i class="fa fa-white fa-times icon-right"></i>
       </button>
     </div>
-    </div><!-- End Modal Footer-->
+  </div><!-- End Modal Footer-->
+		
 	</div><!-- End Modal Content-->
 	</div><!-- End Modal -->
 	</div><!-- End Container Fluid-->
+
 
   </body>
 </html>

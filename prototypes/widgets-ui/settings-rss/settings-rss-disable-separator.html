@@ -24,7 +24,6 @@
     <!-- app js -->	 
     <script src="../../../js/app.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <!--script for transition drop down-->
 <script type="text/javascript">
 $(document).ready(function(){
@@ -115,8 +114,8 @@ $(document).ready(function(){
 
 		<!-- RSS URL-->
 		<div class="form-group">
-			<label ng-if="!hideLabel" class="ng-binding ng-scope">RSS URL</label>
-			<input name="url" type="null" class="form-control" placeholder="http://" onclick="document.location='settings-rss_invalid-url1.html';">
+			<label ng-if="!hideLabel" class="ng-binding ng-scope" onclick="document.location='settings-rss_invalid-url1.html';">RSS URL</label>
+          <input name="url" type="null" class="form-control" placeholder="http://" onclick="document.location='settings-rss_invalid-url1.html';">
 			 <!--<p ng-if="!valid &amp;&amp; invalidType === 'url'" class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>
 		 <div class="checkbox" ng-show="forcedValid || !valid">
 			<label class="ng-binding">
@@ -125,7 +124,8 @@ $(document).ready(function(){
 		  </div>-->
 	</div><!-- END RSS URL-->
 		<br> 
-<!-- Items to Show and Max Items In Queue-->
+
+		<!-- Items to Show and Max Items In Queue-->
 		<div class="row">	 
 			<div class="col-md-3">
 			  <div class="form-group">
@@ -265,8 +265,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-       
-		<hr/>
+      <hr/>
 
 		<!-- Data Selection -->
 		 <label class="control-label add-top">Data Selection</label>
@@ -312,6 +311,11 @@ $(document).ready(function(){
 			</div>
 		</div>
 <hr/>
+		<br/>
+       
+       
+       
+       
 
 		<!--Heading Format-->			 
 		<div class="row">	 
@@ -559,24 +563,31 @@ $(document).ready(function(){
 		<label class="control-label">Layout</label>
 		<div class="row">
 		<div class="form-group">
-			<div class="col-md-4 radio-vertical-align add-bottom">
+			<div class="col-md-3 radio-vertical-align add-bottom">
 				<input type="radio" name="layoutRadioOptions" value="0" checked>
 				<label class="radio-inline">
 					<img class="landscape-layout" src="img/4x1-layout.png">
 				</label>
 			</div>
-			<div class="col-md-4 radio-vertical-align add-bottom">
+			<div class="col-md-3 radio-vertical-align add-bottom">
 				<input type="radio" name="layoutRadioOptions" value="0">
 				<label class="radio-inline">
 					<img class="landscape-layout" src="img/2x1-layout.png">
 				</label>
 			</div>
-			<div class="col-md-4 radio-vertical-align">
+           <div class="col-md-3 radio-vertical-align add-bottom">
+				<input type="radio" name="layoutRadioOptions" value="0">
+				<label class="radio-inline">
+					<img class="landscape-layout" src="img/16x9-layout.png">
+				</label>
+			</div>
+			<div class="col-md-3 radio-vertical-align">
 				<input type="radio" name="layoutRadioOptions" value="0">
 				<label class="radio-inline">
 					<img class="portrait-layout" src="img/1x2-layout.png">
 				</label>
 			</div>
+          
 		</div>
 		</div>
 		
@@ -592,35 +603,30 @@ $(document).ready(function(){
 		</div>
 		 
 		<!-- Show DIV if Custom Radio Selected-->
-		 <div id="custom-layout" class="add-top"> 
+		 <div id="custom-layout" class="half-top"> 
 			 <div class="form-group">
   <!-- ngIf: !hideLabel -->
   <div>
-    <input type="text" class="form-control small-bottom" value="http:www.badurl" onclick="document.location='settings-rss.html';">
-          <div class="form-group">
-    <div class="form-group">
-      <p class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>
-		  <div class="checkbox" ng-show="forcedValid || !valid">
-			<label class="ng-binding">
-			  <input name="validate-url" type="checkbox" value="validate-url" onclick="document.location='settings-rss.html';"> Remove Validation
-			</label>
-		  </div>
-        </div>
-
-	   </div>
+    <input name="url" type="text" ng-model="url" ng-blur="blur()" class="form-control ng-pristine ng-valid ng-touched" placeholder="http://" onclick="document.location='settings-rss_invalid-url2.html';">
+  </div>
+  <!-- ngIf: !valid && invalidType === 'url' -->
+  <!-- ngIf: !valid && invalidType === 'image' -->
+  <!-- ngIf: !valid && invalidType === 'video' -->
+  <!--<div class="checkbox ng-hide" ng-show="forcedValid || !valid">
+    <label class="ng-binding">
+      <input name="validate-url" ng-click="doValidation = !doValidation" type="checkbox" value="validate-url"> Remove Validation
+    </label>
+  </div>-->
 </div>
-		</div>
-          </div> 
-          
-           <!-- Seperator-->
+            <!-- Seperator-->
         <div class="form-group">
           		 <label class="control-label add-top">Separator</label>
 
           <div class="row">
-            <div class="col-md-2">
-				<input class="half-top half-bottom" type="checkbox" checked="checked"  onclick="document.location='settings-rss-disable-separator.html';"> Show Separator Between Stories
+            <div class="col-md-3">
+				<input class="half-top half-bottom" type="checkbox" onclick="document.location='settings-rss.html';"> Show Separator Between Stories
 		    </div>
-          <div class="col-md-3">
+          <!--<div class="col-md-3">
 				<div class="form-group">
 				   <div class="input-group">
 					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="1">
@@ -637,10 +643,12 @@ $(document).ready(function(){
     </div>
   <div class="colorpicker dropdown ng-scope alpha colorpicker-position-bottom" style="top: 36px; left: 0px;"><div class="dropdown-menu"><colorpicker-saturation style="background-color: rgb(255, 0, 0);"><i style="left: 87.8378px; top: 41.9608px;"></i></colorpicker-saturation><colorpicker-hue><i style="top: 0px;"></i></colorpicker-hue><colorpicker-alpha><i style="top: 0px;"></i></colorpicker-alpha><colorpicker-preview style="background-color: rgb(148, 18, 18);"></colorpicker-preview><button type="button" class="close close-colorpicker">×</button></div></div></div>
 </div>
-                  </div>
+                  </div>-->
         </div>
         </div>
-          <hr/>
+           <hr/>
+		</div>
+			 
 		</div>
 		
 	</div><!-- End Modal Body-->
