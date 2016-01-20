@@ -160,9 +160,8 @@ $(document).ready(function(){
 		  </div>
         </div>
        </div>
-       
        <hr/>
-<!--Transitions-->
+		<!--Transitions-->
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
@@ -225,7 +224,7 @@ $(document).ready(function(){
     <div class="col-md-3">
 			  <div class="form-group">
                 <label class="control-label">PUD Failover</label>
-      <span popover="If Play Until Done (PUD) is enabled, the amount of time to show the item(s) when all data is visible and no scrolling takes place." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <span popover="Duration that this widget should be shown in a playlist in the event of no scrolling or insufficient content to scroll." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
       <div class="input-group">
         <input id="scroll-pud" type="number" class="form-control"  value="10">
         <span class="input-group-addon ng-binding">sec</span>
@@ -257,7 +256,7 @@ $(document).ready(function(){
     <div class="col-md-3">
       <div class="form-group">
       <label class="control-label">PUD Failover</label>
-      <span popover="If Play Until Done (PUD) is enabled, the amount of time to show the item(s) when all data is visible and no scrolling takes place." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <span popover="Duration that this widget should be shown in a playlist in the event of no scrolling or insufficient content to scroll." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
       <div class="input-group">
         <input id="scroll-pud" type="number" class="form-control"  value="10">
         <span class="input-group-addon ng-binding">sec</span>
@@ -266,7 +265,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-       <hr/>
+      <hr/>
 
 		<!-- Data Selection -->
 		 <label class="control-label add-top">Data Selection</label>
@@ -313,7 +312,6 @@ $(document).ready(function(){
 		</div>
 		
 <hr/>
-       
 		<br/>
        
        
@@ -546,10 +544,8 @@ $(document).ready(function(){
 				<li class="pull-left font-setting-button">
 				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer highlight-color-picker sp-light"><div class="sp-preview"><div class="sp-preview-inner" style="background-color: rgba(0, 0, 0, 0);"><img src="http://s3.amazonaws.com/rise-common-test/scripts/spectrum/images/text-highlight.png"></div></div><b class="caret"></b></div>
 			  </li>
-             
 			  
 			</ul>
-
 			</div>
 		</div>    
 		<div class="row">
@@ -561,8 +557,6 @@ $(document).ready(function(){
 		</div>
 		<!--End Story Format-->			 
 		<hr/>
-       
-       
 		<br/>
 
 		<!--Layout-->
@@ -625,17 +619,15 @@ $(document).ready(function(){
     </label>
   </div>-->
 </div>
-		</div>
-          <br/>
-             <!-- Seperator-->
+            <!-- Seperator-->
         <div class="form-group">
           		 <label class="control-label add-top">Separator</label>
 
           <div class="row">
             <div class="col-md-3">
-				<input class="half-top half-bottom" type="checkbox" checked="checked"  onclick="document.location='settings-rss-disable-separator.html';"> Show Separator Between Stories
+				<input class="half-top half-bottom" type="checkbox" onclick="document.location='settings-rss.html';"> Show Separator Between Stories
 		    </div>
-          <div class="col-md-3">
+          <!--<div class="col-md-3">
 				<div class="form-group">
 				   <div class="input-group">
 					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="1">
@@ -652,11 +644,11 @@ $(document).ready(function(){
     </div>
   <div class="colorpicker dropdown ng-scope alpha colorpicker-position-bottom" style="top: 36px; left: 0px;"><div class="dropdown-menu"><colorpicker-saturation style="background-color: rgb(255, 0, 0);"><i style="left: 87.8378px; top: 41.9608px;"></i></colorpicker-saturation><colorpicker-hue><i style="top: 0px;"></i></colorpicker-hue><colorpicker-alpha><i style="top: 0px;"></i></colorpicker-alpha><colorpicker-preview style="background-color: rgb(148, 18, 18);"></colorpicker-preview><button type="button" class="close close-colorpicker">×</button></div></div></div>
 </div>
-                  </div>
+                  </div>-->
         </div>
         </div>
-      
-		<hr/>
+           <hr/>
+		</div>
 			 
 		</div>
 		
@@ -677,7 +669,6 @@ $(document).ready(function(){
 	</div><!-- End Modal Content-->
 	</div><!-- End Modal -->
 	</div><!-- End Container Fluid-->
-
 
   </body>
 </html>

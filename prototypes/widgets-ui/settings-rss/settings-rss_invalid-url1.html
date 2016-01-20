@@ -21,15 +21,67 @@
     <script src="https://code.angularjs.org/1.2.23/angular-touch.js"></script>
     <script src="../../../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="../../bower_components/bootstrap-form-components/dist/js/angular/bootstrap-font-picker.js"></script>
-    <!-- app js -->	 
-    <script src="../../../js/app.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<!--script for transition drop down-->
+<script type="text/javascript">
+$(document).ready(function(){
+      $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="fade"){
+                $(".box").not(".fadeDiv").hide();
+                $(".fadeDiv").show();
+            }
+            else if($(this).attr("value")=="scroll"){
+                $(".box").not(".scrollDiv").hide();
+                $(".scrollDiv").show();
+            }
+          else if($(this).attr("value")=="page"){
+                $(".box").not(".pageDiv").hide();
+                $(".pageDiv").show();
+            }
+          
+            else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+    
+<!--script for items to show error-->
+<script>
+  $(document).ready(function(){
+    $("#showDiv").hide();
+    $("#showDiv2").hide();
+
+
+  $("#textfield").keyup(function(){
+    if($(this).val()) {
+        $("#showDiv").hide();
+    } else {
+        $("#showDiv").show();
+    }
+        
+});
+    $("#textfield2").keyup(function(){
+    if($(this).val()) {
+        $("#showDiv2").hide();
+    } else {
+        $("#showDiv2").show();
+    }
+        
+});
+    
+    });
+    </script>
 	<style>
 		.landscape-layout { 
-			width:220px;
+			width:160px;
 		}
 		
 		.portrait-layout { 
-			width:110px;
+			width:70px;
 		}	
 	  </style>
   </head>
@@ -65,8 +117,8 @@
 			<input type="text" class="form-control small-bottom" value="http:www.badurl" onclick="document.location='settings-rss.html';">
           <div class="form-group">
     <div class="form-group">
-      <p class="text-danger ng-binding ng-scope">Please provide a valid URL.</p>
-		  <div class="checkbox" ng-show="forcedValid || !valid">
+      <p class="text-danger ng-binding ng-scope">Please provide a valid URL to a RSS feed.</p>
+		  <div class="checkbox" ng-show="forcedValid || !valid" onclick="document.location='settings-rss.html';">
 			<label class="ng-binding">
 			  <input name="validate-url" type="checkbox" value="validate-url"> Remove Validation
 			</label>
@@ -77,134 +129,199 @@
 	</div><!-- END RSS URL-->
 		<br> 
 
-		<!-- Stories To Display-->
+		<!-- Items to Show and Max Items In Queue-->
 		<div class="row">	 
 			<div class="col-md-3">
 			  <div class="form-group">
-				<label class="control-label">Stories to Display</label>
-				<input type="number" class="form-control" value="2">
+				<label class="control-label">Items to Show</label>
+				<input id="textfield" type="number" class="form-control" value="2">
 			  </div>
 			</div>
 			<div class="col-md-3">
 			  <div class="form-group">
-				<label class="control-label">Total Story Count</label>
-				<input type="number" class="form-control" value="5">
-			  </div>
-			</div>
-          <div class="col-md-3">
-				<div class="form-group">
-				<label class="control-label">Transition Hold</label>
-				   <div class="input-group">
-					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="5">
-					   <span class="input-group-addon ng-binding">sec</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-				<label class="control-label">Refresh Interval</label>
-				   <div class="input-group">
-					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="30">
-					   <span class="input-group-addon ng-binding">sec</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-			  <div class="form-group">
+				<label class="control-label">Max Items in Queue</label>
+				<input id="textfield2" type="number" class="form-control" value="5">
 			  </div>
 			</div>
 		</div>
-
-		<!--Scroll Settings-->
-      <div class="row">
+       
+      <!-- Error for Items to Show -->
+       <div id="showDiv">
+       <div class="form-group">
+      <p class="text-danger ng-binding ng-scope">Please provide a numeric value for "Items to Show".</p>
+		  <div class="checkbox" ng-show="forcedValid || !valid" onclick="document.location='settings-rss.html';">
+			
+		  </div>
+        </div>
+       </div>
+       
+     <!-- Error for Max Items in Queue -->
+        <div id="showDiv2">
+       <div class="form-group">
+      <p class="text-danger ng-binding ng-scope">Please provide a numeric value for "Max Items in Queue".</p>
+		  <div class="checkbox" ng-show="forcedValid || !valid" onclick="document.location='settings-rss.html';">
+			
+		  </div>
+        </div>
+       </div>
+       <hr/>
+		<!--Transitions-->
+<div class="row">
   <div class="col-md-3">
     <div class="form-group">
-      <label class="control-label ng-binding">Scroll</label>
-      <select id="scroll-by" ng-model="scroll.by" class="form-control ng-valid ng-pristine">
-        <option value="none" class="ng-binding">No</option>
-        <option value="continuous" class="ng-binding">Continuously</option>
-        <option value="page" class="ng-binding">By Page</option>
+      <label class="control-label">Transition</label>
+      <select id="scroll-by" class="form-control ng-valid ng-pristine">
+        <option value="none" class="ng-binding" selected onclick="document.location='settings-rss-disable-heading.html';">None</option>
+        <option value="fade" class="ng-binding">Fade</option>
+        <option value="scroll" class="ng-binding">Scroll</option>
+        <option value="page" class="ng-binding">Page</option>
       </select>
     </div>
   </div>
-  <div class="col-md-3 ng-hide" ng-show="scroll.by != 'none'">
+</div>
+       
+<div class="row">  
+  <!--Fade Transition-->
+  <div class="fadeDiv box">
+    <div class="col-md-3">
+				<div class="form-group">
+				<label class="control-label">Show Each Item for</label>
+				   <div class="input-group">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="10">
+					   <span class="input-group-addon ng-binding">sec</span>
+					</div>
+				</div>
+			</div>
+  </div>
+        
+  <!--Scroll Transition-->
+  <div class="scrollDiv box">
+    <div class="col-md-3">
+				<div class="form-group">
+				<label class="control-label">Show Each Item for</label>
+				   <div class="input-group">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="10">
+					   <span class="input-group-addon ng-binding">sec</span>
+					</div>
+				</div>
+			</div>
+  <div class="col-md-3">
     <div class="form-group">
-      <label class="control-label ng-binding">Speed</label>
-      <select id="scroll-speed" ng-model="scroll.speed" class="form-control ng-pristine ng-valid">
-        <option value="slowest" class="ng-binding">Slowest</option>
-        <option value="slow" class="ng-binding">Slow</option>
-        <option value="medium" class="ng-binding">Medium</option>
-        <option value="fast" class="ng-binding">Fast</option>
-        <option value="fastest" class="ng-binding">Fastest</option>
+      <label class="control-label">Speed</label>
+      <select id="scroll-speed" class="form-control ng-pristine ng-valid">
+        <option value="slow">Slow</option>
+        <option value="medium" selected>Medium</option>
+        <option value="fast">Fast</option>
       </select>
     </div>
   </div>
-  <div class="col-md-3 ng-hide" ng-show="scroll.by != 'none'">
+  <div class="col-md-3">
     <div class="form-group">
-      <label class="control-label ng-binding">Pause</label>
+      <label class="control-label">Resume Play</label>
+      <span popover="If content is interacted with resume playing after this set duration." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
       <div class="input-group">
-        <input id="scroll-pause" type="number" ng-model="scroll.pause" class="form-control ng-pristine ng-valid ng-valid-number">
+        <input id="scroll-pause" type="number" class="form-control" value="5">
         <span class="input-group-addon ng-binding">sec</span>
       </div>
     </div>
   </div>
-  <div class="col-md-3 ng-hide" ng-show="scroll.by != 'none'">
-    <div class="form-group">
-      <label class="control-label ng-binding">PUD Failover</label>
-      <span popover="Duration that the content should be shown for in the event of no scrolling or insufficient content to scroll" popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+    <div class="col-md-3">
+			  <div class="form-group">
+                <label class="control-label">PUD Failover</label>
+      <span popover="Duration that this widget should be shown in a playlist in the event of no scrolling or insufficient content to scroll." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
       <div class="input-group">
-        <input id="scroll-pud" type="number" ng-model="scroll.pud" class="form-control ng-pristine ng-valid ng-valid-number">
+        <input id="scroll-pud" type="number" class="form-control"  value="10">
         <span class="input-group-addon ng-binding">sec</span>
+      </div>
+			  </div>
+			</div>
+  </div>
+        <!--Page Transition-->
+  <div class="pageDiv box">
+    <div class="col-md-3">
+				<div class="form-group">
+				<label class="control-label">Show Each Item for</label>
+				   <div class="input-group">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="10">
+					   <span class="input-group-addon ng-binding">sec</span>
+					</div>
+				</div>
+			</div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="control-label">Resume Play</label>
+      <span popover="If content is interacted with resume playing after this set duration." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <div class="input-group">
+        <input id="scroll-pause" type="number" class="form-control" value="5">
+        <span class="input-group-addon ng-binding">sec</span>
+      </div>
+    </div>
+  </div>
+    <div class="col-md-3">
+      <div class="form-group">
+      <label class="control-label">PUD Failover</label>
+      <span popover="Duration that this widget should be shown in a playlist in the event of no scrolling or insufficient content to scroll." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <div class="input-group">
+        <input id="scroll-pud" type="number" class="form-control"  value="10">
+        <span class="input-group-addon ng-binding">sec</span>
+      </div>
       </div>
     </div>
   </div>
 </div>
+      <hr/>
 
 		<!-- Data Selection -->
 		 <label class="control-label add-top">Data Selection</label>
-		<div class="row">	 
-			<div class="radio">
-				<div class="col-md-2">
-				  <label class="radio-inline add-bottom">
-					<input type="radio" name="inlineRadioOptions" value="1" checked> Full Story
-				  </label>
-				</div>
-				<div class="col-md-2">
-					<label class="radio-inline add-bottom">
-					<input type="radio" name="inlineRadioOptions" value="0" > Story Snippet
-				  </label>
-				</div>
-				
-			</div>
-		</div>
-		 <div class="row">	 
+       <div class="row">	 
 			<div class="checkbox">
 				<div class="form-group">
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<label class="add-bottom">
-					  <input type="checkbox" checked="checked" > Heading
+					  <input type="checkbox" checked="checked" onclick="document.location='settings-rss-disable-heading.html';"> Show Title
 					</label>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<label class="add-bottom">
-					  <input type="checkbox" checked="checked"> Date
+					  <input type="checkbox" checked="checked">Show Timestamp
 					</label>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<label class="add-bottom">
-					  <input type="checkbox" checked="checked"> Author
+					  <input type="checkbox" checked="checked"> Show Author
+					</label>
+				  </div>
+                  <div class="col-md-3">
+					<label class="add-bottom">
+					  <input type="checkbox" checked="checked">Show  Image
 					</label>
 				  </div>
 				</div>
 			</div>
 		</div>
-		<hr/>
+		<div class="row">	 
+			<div class="radio">
+				<div class="col-md-3">
+				  <label class="radio-inline add-bottom">
+					<input type="radio" name="inlineRadioOptions" value="1" checked> Show Full Description
+				  </label>
+				</div>
+				<div class="col-md-3">
+					<label class="radio-inline add-bottom">
+					<input type="radio" name="inlineRadioOptions" value="0" > Show Description Snippet
+				  </label>
+				</div>
+				
+			</div>
+		</div>
+		 
+<hr/>
 		<br/>
 
 		<!--Heading Format-->			 
 		<div class="row">	 
 		<div class="col-md-12">
-			<label class="control-label">Heading Style</label>
+			<label class="control-label">Title Style</label>
 			<ul class="list-inline font-setting" >
 				<!-- Font Family -->
 				<li class="pull-left">
@@ -314,7 +431,7 @@
 		<div class="row">
 			<div class="col-md-12">	 
 				<div class="font-picker-text form-group">
-				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Heading Style Sample Text</span>
+				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Title Style Sample Text</span>
 				</div>
 			 </div>
 		</div>
@@ -324,7 +441,7 @@
 		<!--Story Format-->
 		<div class="row">	 
 		<div class="col-md-12">
-			<label class="control-label">Story Style</label>
+			<label class="control-label">Description Style</label>
 			<ul class="list-inline font-setting" >
 				<!-- Font Family -->
 				<li class="pull-left">
@@ -434,7 +551,7 @@
 		<div class="row">
 			<div class="col-md-12">	 
 				<div class="font-picker-text form-group">
-				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Story Style Sample Text</span>
+				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Description Style Sample Text</span>
 				</div>
 			 </div>
 		</div>
@@ -496,6 +613,36 @@
   </div>-->
 </div>
 		</div>
+          
+           <!-- Seperator-->
+        <div class="form-group">
+          		 <label class="control-label add-top">Separator</label>
+
+          <div class="row">
+            <div class="col-md-2">
+				<input class="half-top half-bottom" type="checkbox" checked="checked"  onclick="document.location='settings-rss-disable-separator.html';"> Show Separator Between Stories
+		    </div>
+          <div class="col-md-3">
+				<div class="form-group">
+				   <div class="input-group">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="1">
+					   <span class="input-group-addon ng-binding">size (px)</span>
+					</div>
+				</div>
+			</div>
+            <div class="col-md-3">
+                  <div class="background-color-picker">
+  <div class="background-color-picker-input" style="position:relative;">
+    <div class="input-group ng-untouched ng-valid ng-dirty ng-valid-parse" colorpicker="rgba" colorpicker-parent="true" ng-model="background.color">
+      <input class="form-control ng-valid ng-touched ng-dirty" type="text" ng-model="background.color" placeholder="rgb(238, 238, 238)">
+      <span class="input-group-addon color-wheel"><img style="width:30px;padding:-10px;margin:-10px;" src="https://s3.amazonaws.com/Rise-Images/UI/color_wheel.png"/></span>
+    </div>
+  <div class="colorpicker dropdown ng-scope alpha colorpicker-position-bottom" style="top: 36px; left: 0px;"><div class="dropdown-menu"><colorpicker-saturation style="background-color: rgb(255, 0, 0);"><i style="left: 87.8378px; top: 41.9608px;"></i></colorpicker-saturation><colorpicker-hue><i style="top: 0px;"></i></colorpicker-hue><colorpicker-alpha><i style="top: 0px;"></i></colorpicker-alpha><colorpicker-preview style="background-color: rgb(148, 18, 18);"></colorpicker-preview><button type="button" class="close close-colorpicker">×</button></div></div></div>
+</div>
+                  </div>
+        </div>
+        </div>
+          <hr/>
 			 
 		</div>
 		

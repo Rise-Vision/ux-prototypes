@@ -24,6 +24,7 @@
     <!-- app js -->	 
     <script src="../../../js/app.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <!--script for transition drop down-->
 <script type="text/javascript">
 $(document).ready(function(){
@@ -160,9 +161,8 @@ $(document).ready(function(){
 		  </div>
         </div>
        </div>
-       
        <hr/>
-<!--Transitions-->
+		<!--Transitions-->
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
@@ -225,7 +225,7 @@ $(document).ready(function(){
     <div class="col-md-3">
 			  <div class="form-group">
                 <label class="control-label">PUD Failover</label>
-      <span popover="If Play Until Done (PUD) is enabled, the amount of time to show the item(s) when all data is visible and no scrolling takes place." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <span popover="Duration that this widget should be shown in a playlist in the event of no scrolling or insufficient content to scroll." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
       <div class="input-group">
         <input id="scroll-pud" type="number" class="form-control"  value="10">
         <span class="input-group-addon ng-binding">sec</span>
@@ -239,7 +239,7 @@ $(document).ready(function(){
 				<div class="form-group">
 				<label class="control-label">Show Each Item for</label>
 				   <div class="input-group">
-					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="10">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="5">
 					   <span class="input-group-addon ng-binding">sec</span>
 					</div>
 				</div>
@@ -257,7 +257,7 @@ $(document).ready(function(){
     <div class="col-md-3">
       <div class="form-group">
       <label class="control-label">PUD Failover</label>
-      <span popover="If Play Until Done (PUD) is enabled, the amount of time to show the item(s) when all data is visible and no scrolling takes place." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <span popover="Duration that this widget should be shown in a playlist in the event of no scrolling or insufficient content to scroll." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
       <div class="input-group">
         <input id="scroll-pud" type="number" class="form-control"  value="10">
         <span class="input-group-addon ng-binding">sec</span>
@@ -266,16 +266,17 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-       <hr/>
+       
+		<hr/>
 
-		<!-- Data Selection -->
-		 <label class="control-label add-top">Data Selection</label>
-        <div class="row">	 
+	 <!-- Data Selection -->
+		 <label class="control-label add-top">Data Selection</label>	
+		 <div class="row">	 
 			<div class="checkbox">
 				<div class="form-group">
 				<div class="col-md-3">
 					<label class="add-bottom">
-					  <input type="checkbox" checked="checked" onclick="document.location='settings-rss-disable-heading.html';"> Show Title
+					  <input type="checkbox" onclick="document.location='settings-rss.html';"> Show Title
 					</label>
 				</div>
 				<div class="col-md-3">
@@ -296,6 +297,7 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
+       
 		<div class="row">	 
 			<div class="radio">
 				<div class="col-md-3">
@@ -311,134 +313,9 @@ $(document).ready(function(){
 				
 			</div>
 		</div>
-		
 <hr/>
-       
-		<br/>
-       
-       
-       
-       
 
-		<!--Heading Format-->			 
-		<div class="row">	 
-		<div class="col-md-12">
-			<label class="control-label">Title Style</label>
-			<ul class="list-inline font-setting" >
-				<!-- Font Family -->
-				<li class="pull-left">
-					<font-picker>
-						<div class="font-picker">
-						<div class="bfh-selectbox">
-						<input class="font-family" type="hidden" value="Verdana">
-						<button type="button" class="btn btn-default btn-sm dropdown-toggle font-select-btn" data-toggle="bfh-selectbox">
-						<span class="bfh-selectbox-option">Verdana</span>
-						<span class="caret selectbox-caret"></span>
-						</button>
-						<div class="bfh-selectbox-options">
-						<div role="listbox">
-
-						</div>
-						</div>
-						</div>
-
-						<!-- Custom Font -->
-						<div class="custom-font modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="false">
-						<div class="modal-dialog">
-
-						</div>
-						</div>
-						</div>
-					</font-picker>
-				</li>
-
-				<!-- Font Size -->
-				<li class="pull-left">
-				<font-size-picker ng-model="fontData.size" class="ng-pristine ng-valid">
-					<select class="form-control bfh-fontsizes" data-style="btn-default btn-sm" style="display: none;">
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-						<option value="14">14</option>
-						<option value="18">18</option>
-						<option value="24">24</option>
-						<option value="30">30</option>
-						<option value="36">36</option>
-						<option value="48">48</option>
-						<option value="60">60</option>
-						<option value="72">72</option>
-						<option value="96">96</option>
-					</select>
-					<div class="btn-group bootstrap-select form-control bfh-fontsizes">
-						<button type="button" class="btn dropdown-toggle selectpicker btn-default btn-sm" data-toggle="dropdown" title="20">
-							<span class="filter-option pull-left">20</span>&nbsp;
-							<span class="caret"></span></button>
-						<div class="dropdown-menu open"></div>
-					</div>
-				  </font-size-picker>
-			  </li>
-
-				<!-- Alignment -->
-				<li class="pull-left">
-						<alignment align="fontData.align" class="font-setting-button ng-isolate-scope"><div class="btn-group alignment">
-							<button type="button" class="btn btn-default btn-sm btn-alignment dropdown-toggle" data-toggle="dropdown" data-wysihtml5-command-value="left">
-							<i class="fa fa-align-left"></i>
-							<span class="caret"></span>
-							</button>
-							<div class="dropdown-menu" role="menu">
-							<div class="btn-group">
-							  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="left" tabindex="-1">
-								<i class="fa fa-align-left"></i>
-							  </button>
-							  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="center" tabindex="-1">
-								<i class="fa fa-align-center"></i>
-							  </button>
-							  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="right" tabindex="-1">
-								<i class="fa fa-align-right"></i>
-							  </button>
-							  <button type="button" class="btn btn-default btn-sm" data-wysihtml5-command="alignment" data-wysihtml5-command-value="justify" tabindex="-1">
-								<i class="fa fa-align-justify"></i>
-							  </button>
-							</div>
-							</div>
-							</div>
-						</alignment>
-					</li><!-- End Alignment -->
-				
-				<!--Bold Italic Underlined-->
-				<li class="font-setting-button">
-				<font-style bold="fontData.bold" italic="fontData.italic" underline="fontData.underline" class="ng-isolate-scope"><div class="btn-group">
-			<a class="btn btn-sm btn-default bold" data-wysihtml5-command="bold" title="CTRL+B" tabindex="-1">B</a>
-			<a class="btn btn-sm btn-default italic" data-wysihtml5-command="italic" title="CTRL+I" tabindex="-1">I</a>
-			<a class="btn btn-sm btn-default underline" data-wysihtml5-command="underline" title="CTRL+U" tabindex="-1">U</a>
-			</div>
-			</font-style>
-			  </li>
-				
-				<!--Font Color-->
-				<li class="pull-left font-setting-button">
-				<input color-picker="" type="text" color="fontData.color" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer text-color-picker sp-light"><div class="sp-preview" style="border-color: rgb(0, 0, 0);"><div class="sp-preview-inner"><div class="sp-preview-char">A</div></div></div><b class="caret"></b></div>
-			  </li>
-				
-				<!--Font Highlight-->
-				<li class="pull-left font-setting-button">
-				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer highlight-color-picker sp-light"><div class="sp-preview"><div class="sp-preview-inner" style="background-color: rgba(0, 0, 0, 0);"><img src="http://s3.amazonaws.com/rise-common-test/scripts/spectrum/images/text-highlight.png"></div></div><b class="caret"></b></div>
-			  </li>
-			  
-			</ul>
-			</div>
-		</div>    
-		<div class="row">
-			<div class="col-md-12">	 
-				<div class="font-picker-text form-group">
-				  <span class="ng-binding" style="font-family: Verdana; font-size: 20px; font-weight: normal; font-style: normal; text-decoration: none; color: black; background-color: transparent;">Title Style Sample Text</span>
-				</div>
-			 </div>
-		</div>
-		<!--End Story Format-->	
-		<!--End Heading Format-->
+		
 
 		<!--Story Format-->
 		<div class="row">	 
@@ -546,10 +423,8 @@ $(document).ready(function(){
 				<li class="pull-left font-setting-button">
 				<input color-picker="" type="highlight" color="fontData.highlightColor" class="ng-isolate-scope" style="display: none;"><div class="sp-replacer highlight-color-picker sp-light"><div class="sp-preview"><div class="sp-preview-inner" style="background-color: rgba(0, 0, 0, 0);"><img src="http://s3.amazonaws.com/rise-common-test/scripts/spectrum/images/text-highlight.png"></div></div><b class="caret"></b></div>
 			  </li>
-             
 			  
 			</ul>
-
 			</div>
 		</div>    
 		<div class="row">
@@ -561,8 +436,6 @@ $(document).ready(function(){
 		</div>
 		<!--End Story Format-->			 
 		<hr/>
-       
-       
 		<br/>
 
 		<!--Layout-->
@@ -626,8 +499,7 @@ $(document).ready(function(){
   </div>-->
 </div>
 		</div>
-          <br/>
-             <!-- Seperator-->
+           <!-- Seperator-->
         <div class="form-group">
           		 <label class="control-label add-top">Separator</label>
 
@@ -655,8 +527,7 @@ $(document).ready(function(){
                   </div>
         </div>
         </div>
-      
-		<hr/>
+          <hr/>
 			 
 		</div>
 		
@@ -677,7 +548,6 @@ $(document).ready(function(){
 	</div><!-- End Modal Content-->
 	</div><!-- End Modal -->
 	</div><!-- End Container Fluid-->
-
 
   </body>
 </html>

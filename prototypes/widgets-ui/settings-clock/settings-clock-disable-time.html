@@ -52,66 +52,38 @@
 
 	<!-- Start Modal Body-->
 	 <div class="modal-body">
-		<!-- Specify Video-->
-       
-       <div class="row">	 
-			<div class="checkbox">
-				<div class="form-group">
-				<div class="col-md-2">
-					<label class="add-bottom">
-					  <input type="checkbox" onclick="document.location='settings-clock.html';"> Show Time
-					</label>
-				</div>
-				</div>
-			</div>
-		</div>
-       
-      <!-- Format-->
-        <!--<div class="form-group">
-          <position-setting><div class="row">
-          <div class="col-md-4">
-            <label class="ng-binding ng-scope">Time Format</label>
-            <select name="position" class="form-control">
-              <option value="top-left" class="ng-binding" selected>1:30 PM</option>
-              <option value="top-left" class="ng-binding" >1:30:30 PM</option>
-              <option value="top-center" class="ng-binding">1:30</option>
-              <option value="top-center" class="ng-binding">1:30:30</option>
-              <option value="top-center" class="ng-binding">13:30</option>
-              <option value="top-center" class="ng-binding">13:30:30</option>
-            </select>
-          </div>
-        </div>
-        </position-setting>
-
-        </div>-->
-       
-       <div class="row">	 
-			<div class="checkbox">
-				<div class="form-group">
-				<div class="col-md-2">
-					<label class="add-bottom">
-					  <input type="checkbox" checked="checked" onclick="document.location='settings-clock-disable-both.html';"> Show Date
-					</label>
-				</div>
-				</div>
-			</div>
-		</div>
-       
-        <!-- Format-->
+		<!-- Time-->
         <div class="form-group">
-          <position-setting><div class="row">
+          <label class="ng-binding ng-scope">Time</label>
+          <div class="row">
+            <div class="col-md-2">
+				<input class="half-top half-bottom" type="checkbox"  onclick="document.location='settings-clock.html';"> Show Time
+		    </div>
+          <!--<div class="col-md-4">
+            <select name="position" class="form-control">
+              <option value="top-left" class="ng-binding" selected>12-Hour</option>
+              <option value="top-left" class="ng-binding" >24-Hour</option>        
+            </select>
+          </div>-->
+        </div>
+        </div>
+       
+       <!-- Date-->
+        <div class="form-group">
+          <label class="ng-binding ng-scope">Date</label>
+          <div class="row">
+            <div class="col-md-2">
+				<input class="half-top half-bottom" type="checkbox" checked="checked"  onclick="document.location='settings-clock-disable-both.html';"> Show Date
+		    </div>
           <div class="col-md-4">
-            <label class="ng-binding ng-scope">Date Format</label>
             <select name="position" class="form-control">
               <option value="top-center" class="ng-binding" selected>MMMM DD, YYYY</option>
               <option value="top-center" class="ng-binding">MMM DD YYYY</option>
               <option value="top-left" class="ng-binding">MM/DD/YYYY</option>
-              <option value="top-left" class="ng-binding">DD/MM/YYYY</option>
+              <option value="top-left" class="ng-binding">DD/MM/YYYY</option>        
             </select>
           </div>
         </div>
-        </position-setting>
-          
         </div>
        
        	<!--Heading Format-->			 
