@@ -12,6 +12,7 @@
     <link href="css/settings-video.css" rel="stylesheet" type="text/css">
 	  <link href="../../../bower_components/rv-bootstrap-formhelpers/dist/css/rv-bootstrap-formhelpers.css" rel="stylesheet" type="text/css">
 	  <link href="../../../bower_components/bootstrap-select/bootstrap-select.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- dependencies -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -24,9 +25,28 @@
     <script type="text/javascript" src="../../bower_components/bootstrap-form-components/dist/js/angular/bootstrap-font-picker.js"></script>
     <!-- app js -->	 
     <script src="../../../js/app.js"></script>
-	<style>
-      
-    </style>
+
+    <!--script for transition drop down-->
+<script type="text/javascript">
+$(document).ready(function(){
+      $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="continuously"){
+                $(".box").not(".hideDiv").hide();
+                $(".hideDiv").show();
+            }
+            else if($(this).attr("value")=="page"){
+                $(".box").not(".hideDiv").hide();
+                $(".hideDiv").show();
+            }
+          
+            else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
   </head>
 
   <body>
@@ -52,9 +72,59 @@
 
 	<!-- Start Modal Body-->
 	 <div class="modal-body">
-		<textarea style="background-color:red;">
+       
+       <!--Transitions-->
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="control-label">Scroll</label>
+      <select id="scroll-by" class="form-control ng-valid ng-pristine">
+        <option value="none" class="ng-binding" selected onclick="document.location='settings-rss-disable-heading.html';">None</option>
+        <option value="continuously" class="ng-binding">Continuously</option>
+        <option value="page" class="ng-binding">By Page</option>
+      </select>
+    </div>
+  </div>
+  <div class="hideDiv box">
+    <div class="col-md-3">
+    <div class="form-group">
+      <label class="control-label">Speed</label>
+      <select id="scroll-speed" class="form-control ng-pristine ng-valid">
+        <option value="slow">Slow</option>
+        <option value="medium" selected>Medium</option>
+        <option value="fast">Fast</option>
+      </select>
+    </div>
+  </div>
+    <div class="col-md-3">
+				<div class="form-group">
+				<label class="control-label">Pause</label>
+				   <div class="input-group">
+					   <input id="scroll-horizontal" name="scrollHorizontal" type="number"  class="form-control" value="10">
+					   <span class="input-group-addon ng-binding">sec</span>
+					</div>
+				</div>
+			</div>
+    <div class="col-md-3">
+      <div class="form-group">
+      <label class="control-label">PUD Failover</label>
+      <span popover="If Play Until Done (PUD) is enabled, the amount of time to show the item(s) when all data is visible and no scrolling takes place." popover-trigger="click" popover-placement="right" rv-tooltip="" class="ng-scope fa fa-question-circle fa-lg"></span>
+      <div class="input-group">
+        <input id="scroll-pud" type="number" class="form-control"  value="10">
+        <span class="input-group-addon ng-binding">sec</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+		<textarea>
+    
+          
 </textarea>
-    <script src='http://cdn.tinymce.com/4/tinymce.min.js'></script>
+  
+  
+    <script src='js/tinymce/tinymce.min.js'></script>
 
         <script src="js/index.js"></script>
        

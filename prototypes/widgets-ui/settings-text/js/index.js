@@ -1,8 +1,8 @@
 tinymce.init({
   selector: 'textarea',
-  height: 500,
-  
+  height: 300,
   theme: 'modern',
+  skin: 'rise',
   menubar: false,
   toolbar_items_size: 'medium',
   border_radius: true,
