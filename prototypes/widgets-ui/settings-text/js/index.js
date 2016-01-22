@@ -12,7 +12,7 @@ tinymce.init({
     'insertdatetime media nonbreaking save table contextmenu directionality',
     'emoticons template paste textcolor colorpicker textpattern imagetools'
   ],
-  toolbar1: 'fontselect fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright alignjustify | removeformat code',
+  toolbar1: 'fontselect fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink image | removeformat code',
   image_advtab: true,
   templates: [
     { title: 'Test template 1', content: 'Test 1' },
